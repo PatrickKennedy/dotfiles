@@ -1,4 +1,3 @@
-
 new-module -name PatrickDotfileBootstrap -scriptblock {
 
   function Install-Profile {
@@ -11,7 +10,7 @@ new-module -name PatrickDotfileBootstrap -scriptblock {
     param(
       # An optional profile to install the dotfile profile into.
       # Defaults to the current profile
-      [Profile]
+      [String]
       $useProfile = $profile,
       # Force the profile to be installed even if it already exists.
       [Alias('F')]
