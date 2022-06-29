@@ -1,5 +1,19 @@
 new-module -name PatrickDotfileBootstrap -scriptblock {
 
+  function Install-winget {
+    <#
+    .SYNOPSIS
+      Ensures winget is present and if necessary downloading and installing it
+    #>
+    echo "Checking for Winget..."
+    if (-not (Get-Command "winget" -errorAction SilentlyContinue)) {
+      echo "Installing Winget"
+      Add-AppxPackage "https://aka.ms/getwinget" -errorAction SilentlyContinue
+    } else {
+      echo "Winget already installed"
+    }
+  }
+
   function Install-Profile {
     <#
     .SYNOPSIS
@@ -17,6 +31,12 @@ new-module -name PatrickDotfileBootstrap -scriptblock {
       [switch]
       $Force
     )
+    echo "Bootstrapping Patrick's Paradots"
+    echo "--------------------------------"
+    echo ""
+    # ensure winget is installed before any other operation
+    Install-winget
+
     if (!(Test-Path -Path $useProfile -IsValid)) {
       throw "Profile '$useProfile' is not a valid path."
     }
