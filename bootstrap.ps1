@@ -50,7 +50,7 @@ new-module -name PatrickDotfileBootstrap -scriptblock {
     }
 
     iwr "https://raw.githubusercontent.com/PatrickKennedy/dotfiles/trunk/Profile.ps1" -OutFile $useProfile
-    & $profile
+    & $useProfile
   }
 
   set-alias install -value Install-Profile
