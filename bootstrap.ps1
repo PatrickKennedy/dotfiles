@@ -49,6 +49,12 @@ new-module -name PatrickDotfileBootstrap -scriptblock {
       }
     }
 
+    # Ensure containing folder exists
+    $profileDirectory = $(Split-Path $useProfile)
+    if (-not (Test-Path -Path $profileDirectory)) {
+      New-Item -Type Directory -Path $profileDirectory
+    }
+
     iwr "https://raw.githubusercontent.com/PatrickKennedy/dotfiles/trunk/Profile.ps1" -OutFile $useProfile
     & $useProfile
   }
