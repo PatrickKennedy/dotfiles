@@ -6,6 +6,7 @@ $DependencyIDs = @(
   "Microsoft.VisualStudioCode",
   "GitHub.cli",
   "Volta.Volta",
+  "Docker.DockerDesktop",
   "voidtools.Everything",
   "Microsoft.PowerToys"
 )
