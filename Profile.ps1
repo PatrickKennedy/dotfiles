@@ -43,8 +43,26 @@ function Update-Dependencies {
   Reload-Path
 }
 
+# Based on https://gist.github.com/anthonyeden/0088b07de8951403a643a8485af2709b
 function Install-Fonts {
-  
+  echo "Installing Fonts"
+  # Complete in temp folder to avoid leftovers if something goes wrong
+  pushd $env:TEMP
+
+  $fonts = (New-Object -ComObject Shell.Application).Namespace(0x14)
+  git clone --filter=blob:none --sparse https://github.com/ryanoasis/nerd-fonts
+  cd .\nerd-fonts
+  git sparse-checkout init --cone
+  git sparse-checkout set patched-fonts/JetBrainsMono/Ligatures
+  echo "Installing JetBrains Mono Nerd Font"
+  gci -Include '* Complete Windows Compatible.ttf' -Recurse | ForEach {
+    $fonts.CopyHere($_)
+  }
+
+  cd ..
+  Remove-Item .\nerd-fonts\ -Recurse -Force
+
+  popd
 }
 
 
