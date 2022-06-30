@@ -14,6 +14,10 @@ new-module -name PatrickDotfileBootstrap -scriptblock {
     }
   }
 
+  function Install-gsudo {
+    winget install "gerardog.gsudo"
+  }
+
   function Install-Profile {
     <#
     .SYNOPSIS
@@ -36,6 +40,8 @@ new-module -name PatrickDotfileBootstrap -scriptblock {
     echo ""
     # ensure winget is installed before any other operation
     Install-winget
+    # ease installation of dependecies
+    Install-gsudo
 
     if (!(Test-Path -Path $useProfile -IsValid)) {
       throw "Profile '$useProfile' is not a valid path."

@@ -1,6 +1,5 @@
 
 $DependencyIDs = @(
-  "gerardog.gsudo",
   "Git.Git"
   "Microsoft.WindowsTerminal",
   "Microsoft.VisualStudioCode",
@@ -29,7 +28,7 @@ function Add-UnixUtilsPath {
 
 function Install-Dependencies {
   foreach ($id in $DependencyIDs) {
-    winget install --id $id
+    sudo winget install --id $id
   }
 
   Add-UnixUtilsPath
@@ -38,11 +37,17 @@ function Install-Dependencies {
 
 function Update-Dependencies {
   foreach ($id in $DependencyIDs) {
-    winget update --id $id
+    sudo winget update --id $id
   }
 
   Reload-Path
 }
+
+function Install-Fonts {
+  
+}
+
+
 
 function Reload-Path {
   $env:Path=(`
