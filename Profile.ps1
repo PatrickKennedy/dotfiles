@@ -4,7 +4,7 @@ $DependencyIDs = @(
   "Microsoft.WindowsTerminal",
   "Microsoft.VisualStudioCode",
   "GitHub.cli",
-  "Volta.Volta",
+  "CoreyButler.NVMforWindows",
   "Docker.DockerDesktop",
   "voidtools.Everything",
   "Microsoft.PowerToys",
