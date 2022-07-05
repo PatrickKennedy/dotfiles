@@ -72,11 +72,13 @@ function Install-Fonts {
   popd
 }
 
-
-
 function Reload-Path {
   $env:Path=(`
     [System.Environment]::GetEnvironmentVariable("Path","Machine"),`
     [System.Environment]::GetEnvironmentVariable("Path","User")`
   ) -match '.' -join ';'
 }
+
+# gsudo enhanced 
+Set-Alias 'sudo' 'gsudo'
+Import-Module 'C:\Program Files (x86)\gsudo\gsudoModule.psd1'
