@@ -7,7 +7,13 @@ $DependencyIDs = @(
   "Volta.Volta",
   "Docker.DockerDesktop",
   "voidtools.Everything",
-  "Microsoft.PowerToys"
+  "Microsoft.PowerToys",
+  "FastStone.Capture"
+)
+
+$DesktopDependencies = @(
+  "CreativeTechnology.SoundBlasterCommand",
+  "9NK75KF67S2N" # Tobii Experience (msstore)
 )
 
 $GitUnixUtils = 'C:\Program Files\Git\usr\bin'
@@ -43,7 +49,7 @@ function Update-Dependencies {
   Reload-Path
 }
 
-# Based on https://gist.github.com/anthonyeden/0088b07de8951403a643a8485af2709b
+# Based on https://blog.simontimms.com/2021/06/11/installing-fonts/
 function Install-Fonts {
   echo "Installing Fonts"
   # Complete in temp folder to avoid leftovers if something goes wrong
@@ -55,10 +61,11 @@ function Install-Fonts {
   git sparse-checkout init --cone
   git sparse-checkout set patched-fonts/JetBrainsMono/Ligatures
   echo "Installing JetBrains Mono Nerd Font"
-  gci -Include '* Complete Windows Compatible.ttf' -Recurse | ForEach {
-    $fonts.CopyHere($_)
+  foreach ($font in gci '* Complete Windows Compatible.ttf' -Recurse) {
+    dir $font | %{ $fonts.CopyHere($_.fullname) }
   }
 
+  echo "Cleaning Up Nerd Fonts"
   cd ..
   Remove-Item .\nerd-fonts\ -Recurse -Force
 
