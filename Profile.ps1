@@ -18,6 +18,10 @@ $DesktopDependencies = @(
 
 $GitUnixUtils = 'C:\Program Files\Git\usr\bin'
 
+# gsudo enhanced 
+Set-Alias 'sudo' 'gsudo'
+Import-Module 'C:\Program Files (x86)\gsudo\gsudoModule.psd1'
+
 <#
 .SYNOPSIS
   Adds the unix tools bin folder from git to the PATH environment variable if
@@ -79,6 +83,6 @@ function Reload-Path {
   ) -match '.' -join ';'
 }
 
-# gsudo enhanced 
-Set-Alias 'sudo' 'gsudo'
-Import-Module 'C:\Program Files (x86)\gsudo\gsudoModule.psd1'
+function Reload-Tobii {
+  sudo Restart-Service -DisplayName "tobii*"
+}
