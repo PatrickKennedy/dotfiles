@@ -1,10 +1,11 @@
-
+# Core Profile Module
 $DependencyIDs = @(
   "Git.Git"
   "Microsoft.WindowsTerminal",
   "Microsoft.VisualStudioCode",
   "GitHub.cli",
-  "CoreyButler.NVMforWindows",
+  "pnpm.pnpm",
+  #"CoreyButler.NVMforWindows",
   "Docker.DockerDesktop",
   "voidtools.Everything",
   "Microsoft.PowerToys",
@@ -12,13 +13,14 @@ $DependencyIDs = @(
 )
 
 $DesktopDependencies = @(
-  "CreativeTechnology.SoundBlasterCommand",
+  # "CreativeTechnology.SoundBlasterCommand", # Sound Blaster X3
+  "CreativeTechnology.CreativeApp", # Used with Katana V2X
   "9NK75KF67S2N" # Tobii Experience (msstore)
 )
 
 $GitUnixUtils = 'C:\Program Files\Git\usr\bin'
 
-# gsudo enhanced 
+# gsudo enhanced
 Set-Alias 'sudo' 'gsudo'
 Import-Module 'C:\Program Files (x86)\gsudo\gsudoModule.psd1'
 
@@ -31,7 +33,7 @@ function Add-UnixUtilsPath {
   if (-not ($env:PATH -split ';' -contains $GitUnixUtils)) {
     [System.Environment]::SetEnvironmentVariable(
       'PATH',
-      $GitUnixUtils + ';' + [System.Environment]::GetEnvironmentVariable("Path","User"),
+      $GitUnixUtils + ';' + [System.Environment]::GetEnvironmentVariable("Path", "User"),
       [System.EnvironmentVariableTarget]::User)
   }
 }
@@ -42,47 +44,53 @@ function Install-Dependencies {
   }
 
   Add-UnixUtilsPath
-  Reload-Path
+  Update-Path
 }
 
 function Update-Dependencies {
   foreach ($id in $DependencyIDs) {
+    Write-Output "Updating $id"
     sudo winget update --id $id
   }
 
-  Reload-Path
+  Update-Path
 }
 
 # Based on https://blog.simontimms.com/2021/06/11/installing-fonts/
 function Install-Fonts {
-  echo "Installing Fonts"
+  Write-Output "Installing Fonts"
   # Complete in temp folder to avoid leftovers if something goes wrong
-  pushd $env:TEMP
+  Push-Location $env:TEMP
 
   $fonts = (New-Object -ComObject Shell.Application).Namespace(0x14)
   git clone --filter=blob:none --sparse https://github.com/ryanoasis/nerd-fonts
-  cd .\nerd-fonts
+  Set-Location .\nerd-fonts
   git sparse-checkout init --cone
   git sparse-checkout set patched-fonts/JetBrainsMono/Ligatures
-  echo "Installing JetBrains Mono Nerd Font"
-  foreach ($font in gci '* Complete Windows Compatible.ttf' -Recurse) {
-    dir $font | %{ $fonts.CopyHere($_.fullname) }
+  Write-Output "Installing JetBrains Mono Nerd Font"
+  foreach ($font in Get-ChildItem '* Complete Windows Compatible.ttf' -Recurse) {
+    Get-Item $font | ForEach-Object { $fonts.CopyHere($_.fullname) }
   }
 
-  echo "Cleaning Up Nerd Fonts"
-  cd ..
+  Write-Output "Cleaning Up Nerd Fonts"
+  Set-Location ..
   Remove-Item .\nerd-fonts\ -Recurse -Force
 
-  popd
+  Pop-Location
 }
 
-function Reload-Path {
-  $env:Path=(`
-    [System.Environment]::GetEnvironmentVariable("Path","Machine"),`
-    [System.Environment]::GetEnvironmentVariable("Path","User")`
+function Update-Path {
+  $env:Path = (`
+      [System.Environment]::GetEnvironmentVariable("Path", "Machine"), `
+      [System.Environment]::GetEnvironmentVariable("Path", "User")`
   ) -match '.' -join ';'
 }
 
-function Reload-Tobii {
+function Repair-Tobii {
   sudo Restart-Service -DisplayName "tobii*"
+}
+
+function Repair-Wsl {
+  taskkill /IM "wsl.exe" /F
+  sudo Restart-Service LxssManager
 }
