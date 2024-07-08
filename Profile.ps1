@@ -61,7 +61,8 @@ function Update-Dependencies {
 
 function Update-Profile {
   $script:dynMod = New-Module ([scriptblock]::Create(
-    (Invoke-RestMethod $BootstrapUrl))) | Import-Module -PassThru
+    (Invoke-RestMethod $BootstrapUrl -Headers @{ "Cache-Control" = "no-cache" })
+    )) | Import-Module -PassThru
 
   Install-Profile -Force
 
