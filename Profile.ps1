@@ -27,6 +27,31 @@ $GitUnixUtils = 'C:\Program Files\Git\usr\bin'
 Set-Alias 'sudo' 'gsudo'
 Import-Module "gsudoModule"
 
+# Initialize oh-my-posh if it is installed
+function Use-Posh {
+  if (Get-Command "oh-my-posh" -errorAction SilentlyContinue) {
+    if (-not $env:POSH_THEME) {
+      $script:defaultTheme = 'Tokyo'
+      $env:POSH_THEME = $script:defaultTheme
+      [System.Environment]::SetEnvironmentVariable('POSH_THEME', $script:defaultTheme, 'User')
+    }
+
+    $script:poshThemePath = "$env:POSH_THEMES_PATH\$($env:POSH_THEME.toLower()).omp.json"
+    oh-my-posh init pwsh --config $script:poshThemePath | Invoke-Expression
+  }
+  else {
+    Write-Output "oh-my-posh is not installed. Run 'Install-Dependencies' to install it."
+  }
+}
+
+function Set-PoshTheme {
+  $env:POSH_THEME = $args[0]
+  [System.Environment]::SetEnvironmentVariable('POSH_THEME', $env:POSH_THEME, 'User')
+  oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\$($env:POSH_THEME.toLower()).omp.json" | Invoke-Expression
+}
+
+Use-Posh
+
 <#
 .SYNOPSIS
   Adds the unix tools bin folder from git to the PATH environment variable if
@@ -48,6 +73,12 @@ function Install-Dependencies {
 
   Add-UnixUtilsPath
   Update-Path
+
+  # Initialize oh-my-posh if it is not already installed
+  (Get-Command "Get-PoshThemes" -errorAction SilentlyContinue -ErrorVariable ohMyPoshError)
+  if ($ohMyPoshError -ne $null) {
+    oh-my-posh init pwsh | Invoke-Expression
+  }
 }
 
 function Update-Dependencies {
@@ -61,8 +92,7 @@ function Update-Dependencies {
 
 function Update-Profile {
   $script:dynMod = New-Module ([scriptblock]::Create(
-    (Invoke-RestMethod $BootstrapUrl -Headers @{ "Cache-Control" = "no-cache" })
-    )) | Import-Module -PassThru
+    (Invoke-RestMethod $BootstrapUrl))) | Import-Module -PassThru
 
   Install-Profile -Force
 
