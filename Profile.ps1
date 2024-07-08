@@ -1,4 +1,6 @@
 # Core Profile Module
+$BootstrapUrl = 'https://raw.githubusercontent.com/PatrickKennedy/dotfiles/trunk/bootstrap.ps1'
+
 $DependencyIDs = @(
   "Git.Git"
   "Microsoft.WindowsTerminal",
@@ -9,8 +11,7 @@ $DependencyIDs = @(
   "Docker.DockerDesktop",
   "voidtools.Everything",
   "Microsoft.PowerToys",
-  "FastStone.Capture",
-  "JanDeDobbeleer.OhMyPosh"
+  "FastStone.Capture"
 )
 
 $DesktopDependencies = @(
@@ -23,7 +24,7 @@ $GitUnixUtils = 'C:\Program Files\Git\usr\bin'
 
 # gsudo enhanced
 Set-Alias 'sudo' 'gsudo'
-Import-Module 'C:\Program Files (x86)\gsudo\gsudoModule.psd1'
+Import-Module "gsudoModule"
 
 <#
 .SYNOPSIS
@@ -55,6 +56,15 @@ function Update-Dependencies {
   }
 
   Update-Path
+}
+
+function Update-Profile {
+  $script:dynMod = New-Module ([scriptblock]::Create(
+    (Invoke-RestMethod $BootstrapUrl))) | Import-Module -PassThru
+
+  Install-Profile -Force
+
+  $dynMod | Remove-Module
 }
 
 # Based on https://blog.simontimms.com/2021/06/11/installing-fonts/
