@@ -11,7 +11,8 @@ $DependencyIDs = @(
   "Docker.DockerDesktop",
   "voidtools.Everything",
   "Microsoft.PowerToys",
-  "FastStone.Capture"
+  "FastStone.Capture",
+  "JanDeDobbeleer.OhMyPosh"
 )
 
 $DesktopDependencies = @(
