@@ -61,7 +61,7 @@ new-module -name PatrickDotfileBootstrap -scriptblock {
       New-Item -Type Directory -Path $profileDirectory
     }
 
-    iwr "https://raw.githubusercontent.com/PatrickKennedy/dotfiles/trunk/Profile.ps1" -OutFile $useProfile
+    Invoke-WebRequest "https://raw.githubusercontent.com/PatrickKennedy/dotfiles/trunk/Profile.ps1" -OutFile $useProfile -Headers @{ "Cache-Control" = "no-cache"}
     . $useProfile
   }
 
