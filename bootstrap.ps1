@@ -41,7 +41,7 @@ new-module -name PatrickDotfileBootstrap -scriptblock {
     # ensure winget is installed before any other operation
     Install-winget
     # ease installation of dependecies
-    Install-gsudo
+    # Install-gsudo
 
     if (!(Test-Path -Path $useProfile -IsValid)) {
       throw "Profile '$useProfile' is not a valid path."
