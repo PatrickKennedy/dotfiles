@@ -23,9 +23,9 @@ $DesktopDependencies = @(
 
 $GitUnixUtils = 'C:\Program Files\Git\usr\bin'
 
-# gsudo enhanced
-Set-Alias 'sudo' 'gsudo'
-Import-Module "gsudoModule"
+# gsudo enhanced (disabled due to native sudo)
+#Set-Alias 'sudo' 'gsudo'
+#Import-Module "gsudoModule"
 
 # Initialize oh-my-posh if it is installed
 function Use-Posh {
