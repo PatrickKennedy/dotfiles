@@ -138,8 +138,8 @@ json,2,4
                             "ItemType": "outputAction",
                             "Levels": [
                                 {
-                                    "XDpi": 15,
-                                    "YDpi": 15,
+                                    "XDpiRaw": 3200,
+                                    "YDpiRaw": 3200,
                                     "isValid": true
                                 }
                             ],
@@ -199,7 +199,7 @@ json,2,4
                             "ItemType": "outputAction",
                             "OledConfigurationParameters": {
                                 "Message": "",
-                                "Mode": "cube"
+                                "Mode": "profile"
                             },
                             "TypeId": "oledSet"
                         },
@@ -230,6 +230,16 @@ json,2,4
                             },
                             "Options": "none",
                             "TypeId": "oledFlash"
+                        },
+                        {
+                            "$type": "ZMouseConfig.OutputActionItems.HapticFeedbackOutputActionItem, ZMouseConfig",
+                            "DataType": "trigger",
+                            "HapticFeedbackOption": "configuredAndWait",
+                            "IsValid": true,
+                            "ItemType": "outputAction",
+                            "StrengthPercentage": 17,
+                            "Time10ms": 2,
+                            "TypeId": "hapticFeedback"
                         }
                     ],
                     "DeactivationOutputActionItems": [
@@ -433,7 +443,7 @@ json,2,4
                             "TypeId": "mouseButton"
                         }
                     ],
-                    "ActivationOutputName": "",
+                    "ActivationOutputName": "Aim",
                     "DeactivationOutputActionItems": [
                         {
                             "$type": "ZMouseConfig.OutputActionItems.MouseButtonOutputActionItem, ZMouseConfig",
@@ -1545,7 +1555,7 @@ json,2,4
                             "ItemType": "outputAction",
                             "SelectionType": "increase",
                             "TypeId": "dpiSelect",
-                            "Value": 1
+                            "Value": 100
                         },
                         {
                             "$type": "ZMouseConfig.OutputActionItems.OledSetOutputActionItem, ZMouseConfig",
@@ -1668,7 +1678,7 @@ json,2,4
                             "ItemType": "outputAction",
                             "SelectionType": "decrease",
                             "TypeId": "dpiSelect",
-                            "Value": 1
+                            "Value": 100
                         },
                         {
                             "$type": "ZMouseConfig.OutputActionItems.OledSetOutputActionItem, ZMouseConfig",
@@ -2228,8 +2238,8 @@ json,2,4
                                     "ItemType": "outputAction",
                                     "Levels": [
                                         {
-                                            "XDpi": 17,
-                                            "YDpi": 17,
+                                            "XDpiRaw": 3200,
+                                            "YDpiRaw": 3200,
                                             "isValid": true
                                         }
                                     ],
@@ -2306,18 +2316,16 @@ json,2,4
                                     "DataType": "trigger",
                                     "IsValid": true,
                                     "ItemType": "outputAction",
-                                    "State": "disabled",
+                                    "State": "enabled",
                                     "TypeId": "tiltAutoZeroing"
                                 },
                                 {
-                                    "$type": "ZMouseConfig.OutputActionItems.HapticFeedbackOutputActionItem, ZMouseConfig",
+                                    "$type": "ZMouseConfig.OutputActionItems.DoNothingOutputActionItem, ZMouseConfig",
                                     "DataType": "trigger",
-                                    "HapticFeedbackOption": "configured",
+                                    "IsSelected": false,
                                     "IsValid": true,
                                     "ItemType": "outputAction",
-                                    "StrengthPercentage": 38,
-                                    "Time10ms": 2,
-                                    "TypeId": "hapticFeedback"
+                                    "TypeId": "doNothing"
                                 }
                             ],
                             "DeactivationOutputActionItems": [
@@ -2417,7 +2425,7 @@ json,2,4
                             "Id": "1",
                             "InputActionType": {
                                 "$type": "ZMouseConfig.InputActionTypes.SurfaceCombinedInputActionType, ZMouseConfig",
-                                "CountDivisor": 80,
+                                "CountDivisor": 120,
                                 "DataType": "twoCount",
                                 "Direction": "yPositive",
                                 "Id": "surfaceCombined",
@@ -2502,7 +2510,7 @@ json,2,4
                             "Id": "1",
                             "InputActionType": {
                                 "$type": "ZMouseConfig.InputActionTypes.SurfaceCombinedInputActionType, ZMouseConfig",
-                                "CountDivisor": 80,
+                                "CountDivisor": 120,
                                 "DataType": "twoCount",
                                 "Direction": "yNegative",
                                 "Id": "surfaceCombined",
@@ -2554,6 +2562,231 @@ json,2,4
                                     "IsValid": true,
                                     "ItemType": "outputAction",
                                     "KeyCode": {
+                                        "HidPageValue": 227
+                                    },
+                                    "TypeId": "keyboardKey"
+                                },
+                                {
+                                    "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                    "ButtonState": "downOn",
+                                    "DataType": "trigger",
+                                    "IsValid": true,
+                                    "ItemType": "outputAction",
+                                    "KeyCode": {
+                                        "HidPageValue": 224
+                                    },
+                                    "TypeId": "keyboardKey"
+                                },
+                                {
+                                    "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                    "ButtonState": "tap",
+                                    "DataType": "trigger",
+                                    "IsValid": true,
+                                    "ItemType": "outputAction",
+                                    "KeyCode": {
+                                        "HidPageValue": 80
+                                    },
+                                    "TypeId": "keyboardKey"
+                                },
+                                {
+                                    "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                    "ButtonState": "upOff",
+                                    "DataType": "trigger",
+                                    "IsValid": true,
+                                    "ItemType": "outputAction",
+                                    "KeyCode": {
+                                        "HidPageValue": 224
+                                    },
+                                    "TypeId": "keyboardKey"
+                                },
+                                {
+                                    "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                    "ButtonState": "upOff",
+                                    "DataType": "trigger",
+                                    "IsValid": true,
+                                    "ItemType": "outputAction",
+                                    "KeyCode": {
+                                        "HidPageValue": 227
+                                    },
+                                    "TypeId": "keyboardKey"
+                                }
+                            ],
+                            "ActivationOutputName": "",
+                            "DeactivationOutputActionItems": [
+                            ],
+                            "Id": "1",
+                            "InputActionType": {
+                                "$type": "ZMouseConfig.InputActionTypes.SurfaceCombinedInputActionType, ZMouseConfig",
+                                "CountDivisor": 135,
+                                "DataType": "twoCount",
+                                "Direction": "xPositive",
+                                "Id": "surfaceCombined",
+                                "IsValid": true,
+                                "Repeat": false
+                            },
+                            "ItemType": "actionMapping",
+                            "OutputActionSequenceDelay": 0,
+                            "Predecessor": {
+                                "ActionMappingIndexToBlockOnActivation": 65535,
+                                "ActionMappingIndexToBlockOnDeactivation": 65535,
+                                "ActivationOutputActionItems": [
+                                ],
+                                "ActivationOutputName": "",
+                                "DeactivationOutputActionItems": [
+                                ],
+                                "Id": "1",
+                                "InputActionType": {
+                                    "$type": "ZMouseConfig.InputActionTypes.ButtonToggleInputActionType, ZMouseConfig",
+                                    "ActiveState": "activeWhenOn",
+                                    "Button": {
+                                        "Id": "triggerLeftPush",
+                                        "IsValid": true,
+                                        "KeyName": "MouseButtonTriggerLeftPush"
+                                    },
+                                    "DataType": "trigger",
+                                    "Id": "buttonToggle",
+                                    "IsValid": true
+                                },
+                                "ItemType": "actionMapping",
+                                "OutputActionSequenceDelay": 0,
+                                "Predecessor": null,
+                                "PredecessorId": 65535,
+                                "ShouldBlockOnActivation": false,
+                                "ShouldBlockOnDeactivation": false
+                            },
+                            "PredecessorId": 1,
+                            "ShouldBlockOnActivation": false,
+                            "ShouldBlockOnDeactivation": false
+                        },
+                        {
+                            "ActionMappingIndexToBlockOnActivation": 65535,
+                            "ActionMappingIndexToBlockOnDeactivation": 65535,
+                            "ActivationOutputActionItems": [
+                                {
+                                    "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                    "ButtonState": "downOn",
+                                    "DataType": "trigger",
+                                    "IsValid": true,
+                                    "ItemType": "outputAction",
+                                    "KeyCode": {
+                                        "HidPageValue": 227
+                                    },
+                                    "TypeId": "keyboardKey"
+                                },
+                                {
+                                    "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                    "ButtonState": "downOn",
+                                    "DataType": "trigger",
+                                    "IsValid": true,
+                                    "ItemType": "outputAction",
+                                    "KeyCode": {
+                                        "HidPageValue": 224
+                                    },
+                                    "TypeId": "keyboardKey"
+                                },
+                                {
+                                    "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                    "ButtonState": "tap",
+                                    "DataType": "trigger",
+                                    "IsValid": true,
+                                    "ItemType": "outputAction",
+                                    "KeyCode": {
+                                        "HidPageValue": 79
+                                    },
+                                    "TypeId": "keyboardKey"
+                                },
+                                {
+                                    "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                    "ButtonState": "upOff",
+                                    "DataType": "trigger",
+                                    "IsValid": true,
+                                    "ItemType": "outputAction",
+                                    "KeyCode": {
+                                        "HidPageValue": 224
+                                    },
+                                    "TypeId": "keyboardKey"
+                                },
+                                {
+                                    "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                    "ButtonState": "upOff",
+                                    "DataType": "trigger",
+                                    "IsValid": true,
+                                    "ItemType": "outputAction",
+                                    "KeyCode": {
+                                        "HidPageValue": 227
+                                    },
+                                    "TypeId": "keyboardKey"
+                                }
+                            ],
+                            "ActivationOutputName": "",
+                            "DeactivationOutputActionItems": [
+                            ],
+                            "Id": "1",
+                            "InputActionType": {
+                                "$type": "ZMouseConfig.InputActionTypes.SurfaceCombinedInputActionType, ZMouseConfig",
+                                "CountDivisor": 135,
+                                "DataType": "twoCount",
+                                "Direction": "xNegative",
+                                "Id": "surfaceCombined",
+                                "IsValid": true,
+                                "Repeat": false
+                            },
+                            "ItemType": "actionMapping",
+                            "OutputActionSequenceDelay": 0,
+                            "Predecessor": {
+                                "ActionMappingIndexToBlockOnActivation": 65535,
+                                "ActionMappingIndexToBlockOnDeactivation": 65535,
+                                "ActivationOutputActionItems": [
+                                ],
+                                "ActivationOutputName": "",
+                                "DeactivationOutputActionItems": [
+                                ],
+                                "Id": "1",
+                                "InputActionType": {
+                                    "$type": "ZMouseConfig.InputActionTypes.ButtonToggleInputActionType, ZMouseConfig",
+                                    "ActiveState": "activeWhenOn",
+                                    "Button": {
+                                        "Id": "triggerLeftPush",
+                                        "IsValid": true,
+                                        "KeyName": "MouseButtonTriggerLeftPush"
+                                    },
+                                    "DataType": "trigger",
+                                    "Id": "buttonToggle",
+                                    "IsValid": true
+                                },
+                                "ItemType": "actionMapping",
+                                "OutputActionSequenceDelay": 0,
+                                "Predecessor": null,
+                                "PredecessorId": 65535,
+                                "ShouldBlockOnActivation": false,
+                                "ShouldBlockOnDeactivation": false
+                            },
+                            "PredecessorId": 1,
+                            "ShouldBlockOnActivation": false,
+                            "ShouldBlockOnDeactivation": false
+                        },
+                        {
+                            "ActionMappingIndexToBlockOnActivation": 65535,
+                            "ActionMappingIndexToBlockOnDeactivation": 65535,
+                            "ActivationOutputActionItems": [
+                                {
+                                    "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                    "ButtonState": "downOn",
+                                    "DataType": "trigger",
+                                    "IsValid": true,
+                                    "ItemType": "outputAction",
+                                    "KeyCode": {
+                                        "HidPageValue": 226
+                                    },
+                                    "TypeId": "keyboardKey"
+                                },
+                                {
+                                    "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                    "ButtonState": "downOn",
+                                    "DataType": "trigger",
+                                    "IsValid": true,
+                                    "ItemType": "outputAction",
+                                    "KeyCode": {
                                         "HidPageValue": 224
                                     },
                                     "TypeId": "keyboardKey"
@@ -2568,10 +2801,7 @@ json,2,4
                                         "HidPageValue": 43
                                     },
                                     "TypeId": "keyboardKey"
-                                }
-                            ],
-                            "ActivationOutputName": "",
-                            "DeactivationOutputActionItems": [
+                                },
                                 {
                                     "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
                                     "ButtonState": "upOff",
@@ -2580,6 +2810,31 @@ json,2,4
                                     "ItemType": "outputAction",
                                     "KeyCode": {
                                         "HidPageValue": 224
+                                    },
+                                    "TypeId": "keyboardKey"
+                                },
+                                {
+                                    "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                    "ButtonState": "upOff",
+                                    "DataType": "trigger",
+                                    "IsValid": true,
+                                    "ItemType": "outputAction",
+                                    "KeyCode": {
+                                        "HidPageValue": 226
+                                    },
+                                    "TypeId": "keyboardKey"
+                                }
+                            ],
+                            "ActivationOutputName": "",
+                            "DeactivationOutputActionItems": [
+                                {
+                                    "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                    "ButtonState": "tap",
+                                    "DataType": "trigger",
+                                    "IsValid": true,
+                                    "ItemType": "outputAction",
+                                    "KeyCode": {
+                                        "HidPageValue": 40
                                     },
                                     "TypeId": "keyboardKey"
                                 }
@@ -2615,7 +2870,7 @@ json,2,4
                                     "IsValid": true,
                                     "ItemType": "outputAction",
                                     "KeyCode": {
-                                        "HidPageValue": 43
+                                        "HidPageValue": 82
                                     },
                                     "TypeId": "keyboardKey"
                                 },
@@ -2625,8 +2880,8 @@ json,2,4
                                     "HapticFeedbackOption": "configured",
                                     "IsValid": true,
                                     "ItemType": "outputAction",
-                                    "StrengthPercentage": 100,
-                                    "Time10ms": 3,
+                                    "StrengthPercentage": 13,
+                                    "Time10ms": 7,
                                     "TypeId": "hapticFeedback"
                                 }
                             ],
@@ -2638,7 +2893,7 @@ json,2,4
                                 "$type": "ZMouseConfig.InputActionTypes.SurfaceCombinedInputActionType, ZMouseConfig",
                                 "CountDivisor": 120,
                                 "DataType": "twoCount",
-                                "Direction": "xPositive",
+                                "Direction": "yNegative",
                                 "Id": "surfaceCombined",
                                 "IsValid": true,
                                 "Repeat": true
@@ -2649,6 +2904,17 @@ json,2,4
                                 "ActionMappingIndexToBlockOnActivation": 65535,
                                 "ActionMappingIndexToBlockOnDeactivation": 65535,
                                 "ActivationOutputActionItems": [
+                                    {
+                                        "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                        "ButtonState": "downOn",
+                                        "DataType": "trigger",
+                                        "IsValid": true,
+                                        "ItemType": "outputAction",
+                                        "KeyCode": {
+                                            "HidPageValue": 226
+                                        },
+                                        "TypeId": "keyboardKey"
+                                    },
                                     {
                                         "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
                                         "ButtonState": "downOn",
@@ -2670,10 +2936,7 @@ json,2,4
                                             "HidPageValue": 43
                                         },
                                         "TypeId": "keyboardKey"
-                                    }
-                                ],
-                                "ActivationOutputName": "",
-                                "DeactivationOutputActionItems": [
+                                    },
                                     {
                                         "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
                                         "ButtonState": "upOff",
@@ -2682,6 +2945,31 @@ json,2,4
                                         "ItemType": "outputAction",
                                         "KeyCode": {
                                             "HidPageValue": 224
+                                        },
+                                        "TypeId": "keyboardKey"
+                                    },
+                                    {
+                                        "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                        "ButtonState": "upOff",
+                                        "DataType": "trigger",
+                                        "IsValid": true,
+                                        "ItemType": "outputAction",
+                                        "KeyCode": {
+                                            "HidPageValue": 226
+                                        },
+                                        "TypeId": "keyboardKey"
+                                    }
+                                ],
+                                "ActivationOutputName": "",
+                                "DeactivationOutputActionItems": [
+                                    {
+                                        "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                        "ButtonState": "tap",
+                                        "DataType": "trigger",
+                                        "IsValid": true,
+                                        "ItemType": "outputAction",
+                                        "KeyCode": {
+                                            "HidPageValue": 40
                                         },
                                         "TypeId": "keyboardKey"
                                     }
@@ -2706,7 +2994,7 @@ json,2,4
                                 "ShouldBlockOnActivation": false,
                                 "ShouldBlockOnDeactivation": false
                             },
-                            "PredecessorId": 4,
+                            "PredecessorId": 6,
                             "ShouldBlockOnActivation": false,
                             "ShouldBlockOnDeactivation": false
                         },
@@ -2716,34 +3004,12 @@ json,2,4
                             "ActivationOutputActionItems": [
                                 {
                                     "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
-                                    "ButtonState": "downOn",
-                                    "DataType": "trigger",
-                                    "IsValid": true,
-                                    "ItemType": "outputAction",
-                                    "KeyCode": {
-                                        "HidPageValue": 225
-                                    },
-                                    "TypeId": "keyboardKey"
-                                },
-                                {
-                                    "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
                                     "ButtonState": "tap",
                                     "DataType": "trigger",
                                     "IsValid": true,
                                     "ItemType": "outputAction",
                                     "KeyCode": {
-                                        "HidPageValue": 43
-                                    },
-                                    "TypeId": "keyboardKey"
-                                },
-                                {
-                                    "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
-                                    "ButtonState": "upOff",
-                                    "DataType": "trigger",
-                                    "IsValid": true,
-                                    "ItemType": "outputAction",
-                                    "KeyCode": {
-                                        "HidPageValue": 225
+                                        "HidPageValue": 81
                                     },
                                     "TypeId": "keyboardKey"
                                 },
@@ -2753,8 +3019,147 @@ json,2,4
                                     "HapticFeedbackOption": "configured",
                                     "IsValid": true,
                                     "ItemType": "outputAction",
-                                    "StrengthPercentage": 100,
-                                    "Time10ms": 3,
+                                    "StrengthPercentage": 13,
+                                    "Time10ms": 7,
+                                    "TypeId": "hapticFeedback"
+                                }
+                            ],
+                            "ActivationOutputName": "",
+                            "DeactivationOutputActionItems": [
+                            ],
+                            "Id": "1",
+                            "InputActionType": {
+                                "$type": "ZMouseConfig.InputActionTypes.SurfaceCombinedInputActionType, ZMouseConfig",
+                                "CountDivisor": 120,
+                                "DataType": "twoCount",
+                                "Direction": "yPositive",
+                                "Id": "surfaceCombined",
+                                "IsValid": true,
+                                "Repeat": true
+                            },
+                            "ItemType": "actionMapping",
+                            "OutputActionSequenceDelay": 0,
+                            "Predecessor": {
+                                "ActionMappingIndexToBlockOnActivation": 65535,
+                                "ActionMappingIndexToBlockOnDeactivation": 65535,
+                                "ActivationOutputActionItems": [
+                                    {
+                                        "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                        "ButtonState": "downOn",
+                                        "DataType": "trigger",
+                                        "IsValid": true,
+                                        "ItemType": "outputAction",
+                                        "KeyCode": {
+                                            "HidPageValue": 226
+                                        },
+                                        "TypeId": "keyboardKey"
+                                    },
+                                    {
+                                        "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                        "ButtonState": "downOn",
+                                        "DataType": "trigger",
+                                        "IsValid": true,
+                                        "ItemType": "outputAction",
+                                        "KeyCode": {
+                                            "HidPageValue": 224
+                                        },
+                                        "TypeId": "keyboardKey"
+                                    },
+                                    {
+                                        "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                        "ButtonState": "tap",
+                                        "DataType": "trigger",
+                                        "IsValid": true,
+                                        "ItemType": "outputAction",
+                                        "KeyCode": {
+                                            "HidPageValue": 43
+                                        },
+                                        "TypeId": "keyboardKey"
+                                    },
+                                    {
+                                        "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                        "ButtonState": "upOff",
+                                        "DataType": "trigger",
+                                        "IsValid": true,
+                                        "ItemType": "outputAction",
+                                        "KeyCode": {
+                                            "HidPageValue": 224
+                                        },
+                                        "TypeId": "keyboardKey"
+                                    },
+                                    {
+                                        "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                        "ButtonState": "upOff",
+                                        "DataType": "trigger",
+                                        "IsValid": true,
+                                        "ItemType": "outputAction",
+                                        "KeyCode": {
+                                            "HidPageValue": 226
+                                        },
+                                        "TypeId": "keyboardKey"
+                                    }
+                                ],
+                                "ActivationOutputName": "",
+                                "DeactivationOutputActionItems": [
+                                    {
+                                        "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                        "ButtonState": "tap",
+                                        "DataType": "trigger",
+                                        "IsValid": true,
+                                        "ItemType": "outputAction",
+                                        "KeyCode": {
+                                            "HidPageValue": 40
+                                        },
+                                        "TypeId": "keyboardKey"
+                                    }
+                                ],
+                                "Id": "1",
+                                "InputActionType": {
+                                    "$type": "ZMouseConfig.InputActionTypes.ButtonToggleInputActionType, ZMouseConfig",
+                                    "ActiveState": "activeWhenOn",
+                                    "Button": {
+                                        "Id": "triggerRightPush",
+                                        "IsValid": true,
+                                        "KeyName": "MouseButtonTriggerRightPush"
+                                    },
+                                    "DataType": "trigger",
+                                    "Id": "buttonToggle",
+                                    "IsValid": true
+                                },
+                                "ItemType": "actionMapping",
+                                "OutputActionSequenceDelay": 0,
+                                "Predecessor": null,
+                                "PredecessorId": 65535,
+                                "ShouldBlockOnActivation": false,
+                                "ShouldBlockOnDeactivation": false
+                            },
+                            "PredecessorId": 6,
+                            "ShouldBlockOnActivation": false,
+                            "ShouldBlockOnDeactivation": false
+                        },
+                        {
+                            "ActionMappingIndexToBlockOnActivation": 65535,
+                            "ActionMappingIndexToBlockOnDeactivation": 65535,
+                            "ActivationOutputActionItems": [
+                                {
+                                    "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                    "ButtonState": "tap",
+                                    "DataType": "trigger",
+                                    "IsValid": true,
+                                    "ItemType": "outputAction",
+                                    "KeyCode": {
+                                        "HidPageValue": 80
+                                    },
+                                    "TypeId": "keyboardKey"
+                                },
+                                {
+                                    "$type": "ZMouseConfig.OutputActionItems.HapticFeedbackOutputActionItem, ZMouseConfig",
+                                    "DataType": "trigger",
+                                    "HapticFeedbackOption": "configured",
+                                    "IsValid": true,
+                                    "ItemType": "outputAction",
+                                    "StrengthPercentage": 13,
+                                    "Time10ms": 7,
                                     "TypeId": "hapticFeedback"
                                 }
                             ],
@@ -2784,6 +3189,17 @@ json,2,4
                                         "IsValid": true,
                                         "ItemType": "outputAction",
                                         "KeyCode": {
+                                            "HidPageValue": 226
+                                        },
+                                        "TypeId": "keyboardKey"
+                                    },
+                                    {
+                                        "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                        "ButtonState": "downOn",
+                                        "DataType": "trigger",
+                                        "IsValid": true,
+                                        "ItemType": "outputAction",
+                                        "KeyCode": {
                                             "HidPageValue": 224
                                         },
                                         "TypeId": "keyboardKey"
@@ -2798,10 +3214,7 @@ json,2,4
                                             "HidPageValue": 43
                                         },
                                         "TypeId": "keyboardKey"
-                                    }
-                                ],
-                                "ActivationOutputName": "",
-                                "DeactivationOutputActionItems": [
+                                    },
                                     {
                                         "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
                                         "ButtonState": "upOff",
@@ -2810,6 +3223,31 @@ json,2,4
                                         "ItemType": "outputAction",
                                         "KeyCode": {
                                             "HidPageValue": 224
+                                        },
+                                        "TypeId": "keyboardKey"
+                                    },
+                                    {
+                                        "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                        "ButtonState": "upOff",
+                                        "DataType": "trigger",
+                                        "IsValid": true,
+                                        "ItemType": "outputAction",
+                                        "KeyCode": {
+                                            "HidPageValue": 226
+                                        },
+                                        "TypeId": "keyboardKey"
+                                    }
+                                ],
+                                "ActivationOutputName": "",
+                                "DeactivationOutputActionItems": [
+                                    {
+                                        "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                        "ButtonState": "tap",
+                                        "DataType": "trigger",
+                                        "IsValid": true,
+                                        "ItemType": "outputAction",
+                                        "KeyCode": {
+                                            "HidPageValue": 40
                                         },
                                         "TypeId": "keyboardKey"
                                     }
@@ -2834,7 +3272,146 @@ json,2,4
                                 "ShouldBlockOnActivation": false,
                                 "ShouldBlockOnDeactivation": false
                             },
-                            "PredecessorId": 4,
+                            "PredecessorId": 6,
+                            "ShouldBlockOnActivation": false,
+                            "ShouldBlockOnDeactivation": false
+                        },
+                        {
+                            "ActionMappingIndexToBlockOnActivation": 65535,
+                            "ActionMappingIndexToBlockOnDeactivation": 65535,
+                            "ActivationOutputActionItems": [
+                                {
+                                    "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                    "ButtonState": "tap",
+                                    "DataType": "trigger",
+                                    "IsValid": true,
+                                    "ItemType": "outputAction",
+                                    "KeyCode": {
+                                        "HidPageValue": 79
+                                    },
+                                    "TypeId": "keyboardKey"
+                                },
+                                {
+                                    "$type": "ZMouseConfig.OutputActionItems.HapticFeedbackOutputActionItem, ZMouseConfig",
+                                    "DataType": "trigger",
+                                    "HapticFeedbackOption": "configured",
+                                    "IsValid": true,
+                                    "ItemType": "outputAction",
+                                    "StrengthPercentage": 13,
+                                    "Time10ms": 7,
+                                    "TypeId": "hapticFeedback"
+                                }
+                            ],
+                            "ActivationOutputName": "",
+                            "DeactivationOutputActionItems": [
+                            ],
+                            "Id": "1",
+                            "InputActionType": {
+                                "$type": "ZMouseConfig.InputActionTypes.SurfaceCombinedInputActionType, ZMouseConfig",
+                                "CountDivisor": 120,
+                                "DataType": "twoCount",
+                                "Direction": "xPositive",
+                                "Id": "surfaceCombined",
+                                "IsValid": true,
+                                "Repeat": true
+                            },
+                            "ItemType": "actionMapping",
+                            "OutputActionSequenceDelay": 0,
+                            "Predecessor": {
+                                "ActionMappingIndexToBlockOnActivation": 65535,
+                                "ActionMappingIndexToBlockOnDeactivation": 65535,
+                                "ActivationOutputActionItems": [
+                                    {
+                                        "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                        "ButtonState": "downOn",
+                                        "DataType": "trigger",
+                                        "IsValid": true,
+                                        "ItemType": "outputAction",
+                                        "KeyCode": {
+                                            "HidPageValue": 226
+                                        },
+                                        "TypeId": "keyboardKey"
+                                    },
+                                    {
+                                        "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                        "ButtonState": "downOn",
+                                        "DataType": "trigger",
+                                        "IsValid": true,
+                                        "ItemType": "outputAction",
+                                        "KeyCode": {
+                                            "HidPageValue": 224
+                                        },
+                                        "TypeId": "keyboardKey"
+                                    },
+                                    {
+                                        "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                        "ButtonState": "tap",
+                                        "DataType": "trigger",
+                                        "IsValid": true,
+                                        "ItemType": "outputAction",
+                                        "KeyCode": {
+                                            "HidPageValue": 43
+                                        },
+                                        "TypeId": "keyboardKey"
+                                    },
+                                    {
+                                        "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                        "ButtonState": "upOff",
+                                        "DataType": "trigger",
+                                        "IsValid": true,
+                                        "ItemType": "outputAction",
+                                        "KeyCode": {
+                                            "HidPageValue": 224
+                                        },
+                                        "TypeId": "keyboardKey"
+                                    },
+                                    {
+                                        "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                        "ButtonState": "upOff",
+                                        "DataType": "trigger",
+                                        "IsValid": true,
+                                        "ItemType": "outputAction",
+                                        "KeyCode": {
+                                            "HidPageValue": 226
+                                        },
+                                        "TypeId": "keyboardKey"
+                                    }
+                                ],
+                                "ActivationOutputName": "",
+                                "DeactivationOutputActionItems": [
+                                    {
+                                        "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                        "ButtonState": "tap",
+                                        "DataType": "trigger",
+                                        "IsValid": true,
+                                        "ItemType": "outputAction",
+                                        "KeyCode": {
+                                            "HidPageValue": 40
+                                        },
+                                        "TypeId": "keyboardKey"
+                                    }
+                                ],
+                                "Id": "1",
+                                "InputActionType": {
+                                    "$type": "ZMouseConfig.InputActionTypes.ButtonToggleInputActionType, ZMouseConfig",
+                                    "ActiveState": "activeWhenOn",
+                                    "Button": {
+                                        "Id": "triggerRightPush",
+                                        "IsValid": true,
+                                        "KeyName": "MouseButtonTriggerRightPush"
+                                    },
+                                    "DataType": "trigger",
+                                    "Id": "buttonToggle",
+                                    "IsValid": true
+                                },
+                                "ItemType": "actionMapping",
+                                "OutputActionSequenceDelay": 0,
+                                "Predecessor": null,
+                                "PredecessorId": 65535,
+                                "ShouldBlockOnActivation": false,
+                                "ShouldBlockOnDeactivation": false
+                            },
+                            "PredecessorId": 6,
                             "ShouldBlockOnActivation": false,
                             "ShouldBlockOnDeactivation": false
                         },
@@ -2909,7 +3486,7 @@ json,2,4
                                     "HapticFeedbackOption": "configured",
                                     "IsValid": true,
                                     "ItemType": "outputAction",
-                                    "StrengthPercentage": 8,
+                                    "StrengthPercentage": 13,
                                     "Time10ms": 7,
                                     "TypeId": "hapticFeedback"
                                 },
@@ -3012,7 +3589,7 @@ json,2,4
                                 "ShouldBlockOnActivation": false,
                                 "ShouldBlockOnDeactivation": false
                             },
-                            "PredecessorId": 7,
+                            "PredecessorId": 11,
                             "ShouldBlockOnActivation": false,
                             "ShouldBlockOnDeactivation": false
                         },
@@ -3030,7 +3607,10 @@ json,2,4
                                         "HidPageValue": 224
                                     },
                                     "TypeId": "keyboardKey"
-                                },
+                                }
+                            ],
+                            "ActivationOutputName": "",
+                            "DeactivationOutputActionItems": [
                                 {
                                     "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
                                     "ButtonState": "tap",
@@ -3053,9 +3633,6 @@ json,2,4
                                     },
                                     "TypeId": "keyboardKey"
                                 }
-                            ],
-                            "ActivationOutputName": "",
-                            "DeactivationOutputActionItems": [
                             ],
                             "Id": "1",
                             "InputActionType": {
@@ -3087,20 +3664,9 @@ json,2,4
                                     "HapticFeedbackOption": "configured",
                                     "IsValid": true,
                                     "ItemType": "outputAction",
-                                    "StrengthPercentage": 83,
+                                    "StrengthPercentage": 25,
                                     "Time10ms": 7,
                                     "TypeId": "hapticFeedback"
-                                },
-                                {
-                                    "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
-                                    "ButtonState": "downOn",
-                                    "DataType": "trigger",
-                                    "IsValid": true,
-                                    "ItemType": "outputAction",
-                                    "KeyCode": {
-                                        "HidPageValue": 224
-                                    },
-                                    "TypeId": "keyboardKey"
                                 },
                                 {
                                     "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
@@ -3110,17 +3676,6 @@ json,2,4
                                     "ItemType": "outputAction",
                                     "KeyCode": {
                                         "HidPageValue": 4
-                                    },
-                                    "TypeId": "keyboardKey"
-                                },
-                                {
-                                    "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
-                                    "ButtonState": "upOff",
-                                    "DataType": "trigger",
-                                    "IsValid": true,
-                                    "ItemType": "outputAction",
-                                    "KeyCode": {
-                                        "HidPageValue": 224
                                     },
                                     "TypeId": "keyboardKey"
                                 }
@@ -3165,7 +3720,10 @@ json,2,4
                                             "HidPageValue": 224
                                         },
                                         "TypeId": "keyboardKey"
-                                    },
+                                    }
+                                ],
+                                "ActivationOutputName": "",
+                                "DeactivationOutputActionItems": [
                                     {
                                         "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
                                         "ButtonState": "tap",
@@ -3189,9 +3747,6 @@ json,2,4
                                         "TypeId": "keyboardKey"
                                     }
                                 ],
-                                "ActivationOutputName": "",
-                                "DeactivationOutputActionItems": [
-                                ],
                                 "Id": "1",
                                 "InputActionType": {
                                     "$type": "ZMouseConfig.InputActionTypes.ButtonToggleInputActionType, ZMouseConfig",
@@ -3212,39 +3767,7 @@ json,2,4
                                 "ShouldBlockOnActivation": false,
                                 "ShouldBlockOnDeactivation": false
                             },
-                            "PredecessorId": 9,
-                            "ShouldBlockOnActivation": false,
-                            "ShouldBlockOnDeactivation": false
-                        },
-                        {
-                            "ActionMappingIndexToBlockOnActivation": 65535,
-                            "ActionMappingIndexToBlockOnDeactivation": 65535,
-                            "ActivationOutputActionItems": [
-                            ],
-                            "ActivationOutputName": "",
-                            "DeactivationOutputActionItems": [
-                            ],
-                            "Id": "1",
-                            "InputActionType": {
-                                "$type": "ZMouseConfig.InputActionTypes.ImuAngleRegionToggleInputActionType, ZMouseConfig",
-                                "ActiveState": "activeWhenOn",
-                                "Axis": "roll",
-                                "DataType": "trigger",
-                                "Direction": "both",
-                                "Id": "imuAngleRegionToggle",
-                                "IsValid": true,
-                                "Region": {
-                                    "EntryEndDegreeTenths": 1790,
-                                    "EntryStartDegreeTenths": 0,
-                                    "ExitEndDegreeTenths": 1795,
-                                    "ExitStartDegreeTenths": 0,
-                                    "IsValid": true
-                                }
-                            },
-                            "ItemType": "actionMapping",
-                            "OutputActionSequenceDelay": 0,
-                            "Predecessor": null,
-                            "PredecessorId": 65535,
+                            "PredecessorId": 13,
                             "ShouldBlockOnActivation": false,
                             "ShouldBlockOnDeactivation": false
                         },
@@ -3305,19 +3828,24 @@ json,2,4
                                 {
                                     "$type": "ZMouseConfig.OutputActionItems.OledSetOutputActionItem, ZMouseConfig",
                                     "DataType": "trigger",
-                                    "Duration10ms": 100,
                                     "IsValid": true,
                                     "ItemType": "outputAction",
                                     "OledConfigurationParameters": {
                                         "Message": "Scroll Mode",
                                         "Mode": "customMessage"
                                     },
-                                    "Options": "none",
-                                    "TypeId": "oledFlash"
+                                    "TypeId": "oledSet"
                                 }
                             ],
                             "ActivationOutputName": "",
                             "DeactivationOutputActionItems": [
+                                {
+                                    "$type": "ZMouseConfig.OutputActionItems.OledSetOutputActionItem, ZMouseConfig",
+                                    "DataType": "trigger",
+                                    "IsValid": true,
+                                    "ItemType": "outputAction",
+                                    "TypeId": "oledPrevious"
+                                }
                             ],
                             "Id": "1",
                             "InputActionType": {
@@ -3330,9 +3858,9 @@ json,2,4
                                 "IsValid": true,
                                 "Region": {
                                     "EntryEndDegreeTenths": 3600,
-                                    "EntryStartDegreeTenths": 1817,
+                                    "EntryStartDegreeTenths": 1816,
                                     "ExitEndDegreeTenths": 3600,
-                                    "ExitStartDegreeTenths": 1812,
+                                    "ExitStartDegreeTenths": 1811,
                                     "IsValid": true
                                 }
                             },
@@ -3358,7 +3886,7 @@ json,2,4
                                 },
                                 {
                                     "$type": "ZMouseConfig.OutputActionItems.AlternateOutputActionsOutputActionItem, ZMouseConfig",
-                                    "ActionCount": 3,
+                                    "ActionCount": 5,
                                     "DataType": "trigger",
                                     "IsValid": true,
                                     "ItemType": "outputAction",
@@ -3367,28 +3895,12 @@ json,2,4
                                 {
                                     "$type": "ZMouseConfig.OutputActionItems.HapticFeedbackOutputActionItem, ZMouseConfig",
                                     "DataType": "trigger",
-                                    "HapticFeedbackOption": "configuredAndWait",
+                                    "HapticFeedbackOption": "configured",
                                     "IsValid": true,
                                     "ItemType": "outputAction",
-                                    "StrengthPercentage": 33,
+                                    "StrengthPercentage": 25,
                                     "Time10ms": 1,
                                     "TypeId": "hapticFeedback"
-                                },
-                                {
-                                    "$type": "ZMouseConfig.OutputActionItems.WaitOutputActionItem, ZMouseConfig",
-                                    "DataType": "trigger",
-                                    "IsValid": true,
-                                    "ItemType": "outputAction",
-                                    "TimeToWaitms": 10,
-                                    "TypeId": "wait"
-                                },
-                                {
-                                    "$type": "ZMouseConfig.OutputActionItems.WaitOutputActionItem, ZMouseConfig",
-                                    "DataType": "trigger",
-                                    "IsValid": true,
-                                    "ItemType": "outputAction",
-                                    "TimeToWaitms": 10,
-                                    "TypeId": "wait"
                                 }
                             ],
                             "ActivationOutputName": "",
@@ -3397,7 +3909,7 @@ json,2,4
                             "Id": "1",
                             "InputActionType": {
                                 "$type": "ZMouseConfig.InputActionTypes.SurfaceCombinedInputActionType, ZMouseConfig",
-                                "CountDivisor": 15,
+                                "CountDivisor": 30,
                                 "DataType": "twoCount",
                                 "Direction": "yNegative",
                                 "Id": "surfaceCombined",
@@ -3413,19 +3925,24 @@ json,2,4
                                     {
                                         "$type": "ZMouseConfig.OutputActionItems.OledSetOutputActionItem, ZMouseConfig",
                                         "DataType": "trigger",
-                                        "Duration10ms": 100,
                                         "IsValid": true,
                                         "ItemType": "outputAction",
                                         "OledConfigurationParameters": {
                                             "Message": "Scroll Mode",
                                             "Mode": "customMessage"
                                         },
-                                        "Options": "none",
-                                        "TypeId": "oledFlash"
+                                        "TypeId": "oledSet"
                                     }
                                 ],
                                 "ActivationOutputName": "",
                                 "DeactivationOutputActionItems": [
+                                    {
+                                        "$type": "ZMouseConfig.OutputActionItems.OledSetOutputActionItem, ZMouseConfig",
+                                        "DataType": "trigger",
+                                        "IsValid": true,
+                                        "ItemType": "outputAction",
+                                        "TypeId": "oledPrevious"
+                                    }
                                 ],
                                 "Id": "1",
                                 "InputActionType": {
@@ -3438,9 +3955,9 @@ json,2,4
                                     "IsValid": true,
                                     "Region": {
                                         "EntryEndDegreeTenths": 3600,
-                                        "EntryStartDegreeTenths": 1817,
+                                        "EntryStartDegreeTenths": 1816,
                                         "ExitEndDegreeTenths": 3600,
-                                        "ExitStartDegreeTenths": 1812,
+                                        "ExitStartDegreeTenths": 1811,
                                         "IsValid": true
                                     }
                                 },
@@ -3451,7 +3968,7 @@ json,2,4
                                 "ShouldBlockOnActivation": false,
                                 "ShouldBlockOnDeactivation": false
                             },
-                            "PredecessorId": 13,
+                            "PredecessorId": 16,
                             "ShouldBlockOnActivation": false,
                             "ShouldBlockOnDeactivation": false
                         },
@@ -3470,7 +3987,7 @@ json,2,4
                                 },
                                 {
                                     "$type": "ZMouseConfig.OutputActionItems.AlternateOutputActionsOutputActionItem, ZMouseConfig",
-                                    "ActionCount": 3,
+                                    "ActionCount": 5,
                                     "DataType": "trigger",
                                     "IsValid": true,
                                     "ItemType": "outputAction",
@@ -3479,28 +3996,12 @@ json,2,4
                                 {
                                     "$type": "ZMouseConfig.OutputActionItems.HapticFeedbackOutputActionItem, ZMouseConfig",
                                     "DataType": "trigger",
-                                    "HapticFeedbackOption": "configuredAndWait",
+                                    "HapticFeedbackOption": "configured",
                                     "IsValid": true,
                                     "ItemType": "outputAction",
-                                    "StrengthPercentage": 33,
+                                    "StrengthPercentage": 25,
                                     "Time10ms": 1,
                                     "TypeId": "hapticFeedback"
-                                },
-                                {
-                                    "$type": "ZMouseConfig.OutputActionItems.WaitOutputActionItem, ZMouseConfig",
-                                    "DataType": "trigger",
-                                    "IsValid": true,
-                                    "ItemType": "outputAction",
-                                    "TimeToWaitms": 10,
-                                    "TypeId": "wait"
-                                },
-                                {
-                                    "$type": "ZMouseConfig.OutputActionItems.WaitOutputActionItem, ZMouseConfig",
-                                    "DataType": "trigger",
-                                    "IsValid": true,
-                                    "ItemType": "outputAction",
-                                    "TimeToWaitms": 10,
-                                    "TypeId": "wait"
                                 }
                             ],
                             "ActivationOutputName": "",
@@ -3509,7 +4010,7 @@ json,2,4
                             "Id": "1",
                             "InputActionType": {
                                 "$type": "ZMouseConfig.InputActionTypes.SurfaceCombinedInputActionType, ZMouseConfig",
-                                "CountDivisor": 15,
+                                "CountDivisor": 30,
                                 "DataType": "twoCount",
                                 "Direction": "yPositive",
                                 "Id": "surfaceCombined",
@@ -3525,19 +4026,24 @@ json,2,4
                                     {
                                         "$type": "ZMouseConfig.OutputActionItems.OledSetOutputActionItem, ZMouseConfig",
                                         "DataType": "trigger",
-                                        "Duration10ms": 100,
                                         "IsValid": true,
                                         "ItemType": "outputAction",
                                         "OledConfigurationParameters": {
                                             "Message": "Scroll Mode",
                                             "Mode": "customMessage"
                                         },
-                                        "Options": "none",
-                                        "TypeId": "oledFlash"
+                                        "TypeId": "oledSet"
                                     }
                                 ],
                                 "ActivationOutputName": "",
                                 "DeactivationOutputActionItems": [
+                                    {
+                                        "$type": "ZMouseConfig.OutputActionItems.OledSetOutputActionItem, ZMouseConfig",
+                                        "DataType": "trigger",
+                                        "IsValid": true,
+                                        "ItemType": "outputAction",
+                                        "TypeId": "oledPrevious"
+                                    }
                                 ],
                                 "Id": "1",
                                 "InputActionType": {
@@ -3550,9 +4056,9 @@ json,2,4
                                     "IsValid": true,
                                     "Region": {
                                         "EntryEndDegreeTenths": 3600,
-                                        "EntryStartDegreeTenths": 1817,
+                                        "EntryStartDegreeTenths": 1816,
                                         "ExitEndDegreeTenths": 3600,
-                                        "ExitStartDegreeTenths": 1812,
+                                        "ExitStartDegreeTenths": 1811,
                                         "IsValid": true
                                     }
                                 },
@@ -3563,7 +4069,7 @@ json,2,4
                                 "ShouldBlockOnActivation": false,
                                 "ShouldBlockOnDeactivation": false
                             },
-                            "PredecessorId": 13,
+                            "PredecessorId": 16,
                             "ShouldBlockOnActivation": false,
                             "ShouldBlockOnDeactivation": false
                         },
@@ -3603,19 +4109,24 @@ json,2,4
                                     {
                                         "$type": "ZMouseConfig.OutputActionItems.OledSetOutputActionItem, ZMouseConfig",
                                         "DataType": "trigger",
-                                        "Duration10ms": 100,
                                         "IsValid": true,
                                         "ItemType": "outputAction",
                                         "OledConfigurationParameters": {
                                             "Message": "Scroll Mode",
                                             "Mode": "customMessage"
                                         },
-                                        "Options": "none",
-                                        "TypeId": "oledFlash"
+                                        "TypeId": "oledSet"
                                     }
                                 ],
                                 "ActivationOutputName": "",
                                 "DeactivationOutputActionItems": [
+                                    {
+                                        "$type": "ZMouseConfig.OutputActionItems.OledSetOutputActionItem, ZMouseConfig",
+                                        "DataType": "trigger",
+                                        "IsValid": true,
+                                        "ItemType": "outputAction",
+                                        "TypeId": "oledPrevious"
+                                    }
                                 ],
                                 "Id": "1",
                                 "InputActionType": {
@@ -3628,9 +4139,9 @@ json,2,4
                                     "IsValid": true,
                                     "Region": {
                                         "EntryEndDegreeTenths": 3600,
-                                        "EntryStartDegreeTenths": 1817,
+                                        "EntryStartDegreeTenths": 1816,
                                         "ExitEndDegreeTenths": 3600,
-                                        "ExitStartDegreeTenths": 1812,
+                                        "ExitStartDegreeTenths": 1811,
                                         "IsValid": true
                                     }
                                 },
@@ -3641,7 +4152,7 @@ json,2,4
                                 "ShouldBlockOnActivation": false,
                                 "ShouldBlockOnDeactivation": false
                             },
-                            "PredecessorId": 13,
+                            "PredecessorId": 16,
                             "ShouldBlockOnActivation": false,
                             "ShouldBlockOnDeactivation": false
                         },
@@ -3681,19 +4192,24 @@ json,2,4
                                     {
                                         "$type": "ZMouseConfig.OutputActionItems.OledSetOutputActionItem, ZMouseConfig",
                                         "DataType": "trigger",
-                                        "Duration10ms": 100,
                                         "IsValid": true,
                                         "ItemType": "outputAction",
                                         "OledConfigurationParameters": {
                                             "Message": "Scroll Mode",
                                             "Mode": "customMessage"
                                         },
-                                        "Options": "none",
-                                        "TypeId": "oledFlash"
+                                        "TypeId": "oledSet"
                                     }
                                 ],
                                 "ActivationOutputName": "",
                                 "DeactivationOutputActionItems": [
+                                    {
+                                        "$type": "ZMouseConfig.OutputActionItems.OledSetOutputActionItem, ZMouseConfig",
+                                        "DataType": "trigger",
+                                        "IsValid": true,
+                                        "ItemType": "outputAction",
+                                        "TypeId": "oledPrevious"
+                                    }
                                 ],
                                 "Id": "1",
                                 "InputActionType": {
@@ -3706,9 +4222,9 @@ json,2,4
                                     "IsValid": true,
                                     "Region": {
                                         "EntryEndDegreeTenths": 3600,
-                                        "EntryStartDegreeTenths": 1817,
+                                        "EntryStartDegreeTenths": 1816,
                                         "ExitEndDegreeTenths": 3600,
-                                        "ExitStartDegreeTenths": 1812,
+                                        "ExitStartDegreeTenths": 1811,
                                         "IsValid": true
                                     }
                                 },
@@ -3719,73 +4235,7 @@ json,2,4
                                 "ShouldBlockOnActivation": false,
                                 "ShouldBlockOnDeactivation": false
                             },
-                            "PredecessorId": 13,
-                            "ShouldBlockOnActivation": false,
-                            "ShouldBlockOnDeactivation": false
-                        },
-                        {
-                            "ActionMappingIndexToBlockOnActivation": 65535,
-                            "ActionMappingIndexToBlockOnDeactivation": 65535,
-                            "ActivationOutputActionItems": [
-                            ],
-                            "ActivationOutputName": "",
-                            "DeactivationOutputActionItems": [
-                            ],
-                            "Id": "1",
-                            "InputActionType": {
-                                "$type": "ZMouseConfig.InputActionTypes.ImuAngleRegionToggleInputActionType, ZMouseConfig",
-                                "ActiveState": "activeWhenOn",
-                                "Axis": "roll",
-                                "DataType": "trigger",
-                                "Direction": "both",
-                                "Id": "imuAngleRegionToggle",
-                                "IsValid": true,
-                                "Region": {
-                                    "EntryEndDegreeTenths": 3600,
-                                    "EntryStartDegreeTenths": 1810,
-                                    "ExitEndDegreeTenths": 3600,
-                                    "ExitStartDegreeTenths": 1805,
-                                    "IsValid": true
-                                }
-                            },
-                            "ItemType": "actionMapping",
-                            "OutputActionSequenceDelay": 0,
-                            "Predecessor": null,
-                            "PredecessorId": 65535,
-                            "ShouldBlockOnActivation": false,
-                            "ShouldBlockOnDeactivation": false
-                        },
-                        {
-                            "ActionMappingIndexToBlockOnActivation": 65535,
-                            "ActionMappingIndexToBlockOnDeactivation": 65535,
-                            "ActivationOutputActionItems": [
-                            ],
-                            "ActivationOutputName": "",
-                            "DeactivationOutputActionItems": [
-                            ],
-                            "Id": "1",
-                            "InputActionType": {
-                                "$type": "ZMouseConfig.InputActionTypes.ImuAngleRangeInputActionType, ZMouseConfig",
-                                "Axis": "roll",
-                                "DataType": "oneRangeAndRangeInstance",
-                                "Id": "imuAngleRange",
-                                "IsValid": true,
-                                "LeftRange": {
-                                    "EndDegreeTenths": 1800,
-                                    "IsValid": true,
-                                    "StartDegreeTenths": 1720
-                                },
-                                "Mirrored": true,
-                                "RightRange": {
-                                    "EndDegreeTenths": 1880,
-                                    "IsValid": true,
-                                    "StartDegreeTenths": 1800
-                                }
-                            },
-                            "ItemType": "actionMapping",
-                            "OutputActionSequenceDelay": 0,
-                            "Predecessor": null,
-                            "PredecessorId": 65535,
+                            "PredecessorId": 16,
                             "ShouldBlockOnActivation": false,
                             "ShouldBlockOnDeactivation": false
                         },
@@ -3794,15 +4244,31 @@ json,2,4
                             "ActionMappingIndexToBlockOnDeactivation": 65535,
                             "ActivationOutputActionItems": [
                                 {
+                                    "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyStringOutputActionItem, ZMouseConfig",
+                                    "DataType": "trigger",
+                                    "IsValid": true,
+                                    "ItemType": "outputAction",
+                                    "KeyString": "patrick.t2.kennedy",
+                                    "TypeId": "keyboardKeyString"
+                                },
+                                {
                                     "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
                                     "ButtonState": "tap",
                                     "DataType": "trigger",
                                     "IsValid": true,
                                     "ItemType": "outputAction",
                                     "KeyCode": {
-                                        "HidPageValue": 62
+                                        "HidPageValue": 43
                                     },
                                     "TypeId": "keyboardKey"
+                                },
+                                {
+                                    "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyStringOutputActionItem, ZMouseConfig",
+                                    "DataType": "trigger",
+                                    "IsValid": true,
+                                    "ItemType": "outputAction",
+                                    "KeyString": "iOQqOX%zsVVjUu)S3nf3P",
+                                    "TypeId": "keyboardKeyString"
                                 }
                             ],
                             "ActivationOutputName": "",
@@ -3813,9 +4279,9 @@ json,2,4
                                 "$type": "ZMouseConfig.InputActionTypes.ButtonToggleInputActionType, ZMouseConfig",
                                 "ActiveState": "activeWhenOn",
                                 "Button": {
-                                    "Id": "thumbBottom",
+                                    "Id": "fingertipLeft",
                                     "IsValid": true,
-                                    "KeyName": "MouseButtonThumbBottom"
+                                    "KeyName": "MouseButtonFingertipLeft"
                                 },
                                 "DataType": "trigger",
                                 "Id": "buttonToggle",
@@ -3823,8 +4289,57 @@ json,2,4
                             },
                             "ItemType": "actionMapping",
                             "OutputActionSequenceDelay": 0,
-                            "Predecessor": null,
-                            "PredecessorId": 65535,
+                            "Predecessor": {
+                                "ActionMappingIndexToBlockOnActivation": 65535,
+                                "ActionMappingIndexToBlockOnDeactivation": 65535,
+                                "ActivationOutputActionItems": [
+                                    {
+                                        "$type": "ZMouseConfig.OutputActionItems.OledSetOutputActionItem, ZMouseConfig",
+                                        "DataType": "trigger",
+                                        "IsValid": true,
+                                        "ItemType": "outputAction",
+                                        "OledConfigurationParameters": {
+                                            "Message": "Scroll Mode",
+                                            "Mode": "customMessage"
+                                        },
+                                        "TypeId": "oledSet"
+                                    }
+                                ],
+                                "ActivationOutputName": "",
+                                "DeactivationOutputActionItems": [
+                                    {
+                                        "$type": "ZMouseConfig.OutputActionItems.OledSetOutputActionItem, ZMouseConfig",
+                                        "DataType": "trigger",
+                                        "IsValid": true,
+                                        "ItemType": "outputAction",
+                                        "TypeId": "oledPrevious"
+                                    }
+                                ],
+                                "Id": "1",
+                                "InputActionType": {
+                                    "$type": "ZMouseConfig.InputActionTypes.ImuAngleRegionToggleInputActionType, ZMouseConfig",
+                                    "ActiveState": "activeWhenOn",
+                                    "Axis": "roll",
+                                    "DataType": "trigger",
+                                    "Direction": "both",
+                                    "Id": "imuAngleRegionToggle",
+                                    "IsValid": true,
+                                    "Region": {
+                                        "EntryEndDegreeTenths": 3600,
+                                        "EntryStartDegreeTenths": 1816,
+                                        "ExitEndDegreeTenths": 3600,
+                                        "ExitStartDegreeTenths": 1811,
+                                        "IsValid": true
+                                    }
+                                },
+                                "ItemType": "actionMapping",
+                                "OutputActionSequenceDelay": 0,
+                                "Predecessor": null,
+                                "PredecessorId": 65535,
+                                "ShouldBlockOnActivation": false,
+                                "ShouldBlockOnDeactivation": false
+                            },
+                            "PredecessorId": 16,
                             "ShouldBlockOnActivation": false,
                             "ShouldBlockOnDeactivation": false
                         },
@@ -4022,15 +4537,12 @@ json,2,4
                                     "TypeId": "hapticFeedback"
                                 },
                                 {
-                                    "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
-                                    "ButtonState": "downOn",
+                                    "$type": "ZMouseConfig.OutputActionItems.AlternateOutputActionsOutputActionItem, ZMouseConfig",
+                                    "ActionCount": 2,
                                     "DataType": "trigger",
                                     "IsValid": true,
                                     "ItemType": "outputAction",
-                                    "KeyCode": {
-                                        "HidPageValue": 224
-                                    },
-                                    "TypeId": "keyboardKey"
+                                    "TypeId": "alternateOutputActions"
                                 },
                                 {
                                     "$type": "ZMouseConfig.OutputActionItems.MouseButtonOutputActionItem, ZMouseConfig",
@@ -4040,20 +4552,34 @@ json,2,4
                                     "IsValid": true,
                                     "ItemType": "outputAction",
                                     "TypeId": "mouseButton"
+                                },
+                                {
+                                    "$type": "ZMouseConfig.OutputActionItems.WaitOutputActionItem, ZMouseConfig",
+                                    "DataType": "trigger",
+                                    "IsValid": true,
+                                    "ItemType": "outputAction",
+                                    "TimeToWaitms": 10,
+                                    "TypeId": "wait"
+                                },
+                                {
+                                    "$type": "ZMouseConfig.OutputActionItems.GotoOutputActionOutputActionItem, ZMouseConfig",
+                                    "DataType": "trigger",
+                                    "Index": 1,
+                                    "IsValid": true,
+                                    "ItemType": "outputAction",
+                                    "LoopCount": 0,
+                                    "TypeId": "gotoOutputAction"
                                 }
                             ],
                             "ActivationOutputName": "",
                             "DeactivationOutputActionItems": [
                                 {
-                                    "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
-                                    "ButtonState": "upOff",
+                                    "$type": "ZMouseConfig.OutputActionItems.StopLoopingOutputActionItem, ZMouseConfig",
                                     "DataType": "trigger",
                                     "IsValid": true,
                                     "ItemType": "outputAction",
-                                    "KeyCode": {
-                                        "HidPageValue": 224
-                                    },
-                                    "TypeId": "keyboardKey"
+                                    "SkipWaitActions": true,
+                                    "TypeId": "stopLooping"
                                 }
                             ],
                             "Id": "1",
@@ -4071,9 +4597,9 @@ json,2,4
                                 "IsValid": true,
                                 "Region": {
                                     "EntryEndPercentageTenths": 1000,
-                                    "EntryStartPercentageTenths": 500,
+                                    "EntryStartPercentageTenths": 400,
                                     "ExitEndPercentageTenths": 1000,
-                                    "ExitStartPercentageTenths": 400,
+                                    "ExitStartPercentageTenths": 300,
                                     "IsValid": true
                                 }
                             },
@@ -4125,7 +4651,7 @@ json,2,4
                                 "ShouldBlockOnActivation": false,
                                 "ShouldBlockOnDeactivation": false
                             },
-                            "PredecessorId": 23,
+                            "PredecessorId": 24,
                             "ShouldBlockOnActivation": false,
                             "ShouldBlockOnDeactivation": false
                         },
@@ -4230,6 +4756,135 @@ json,2,4
                         "ActionMappings": {
                             "$type": "ZMouseConfig.Items.UserConfigurationGroupItem+ActionMappingList, ZMouseConfig",
                             "$values": [
+                                {
+                                    "ActionMappingIndexToBlockOnActivation": 65535,
+                                    "ActionMappingIndexToBlockOnDeactivation": 65535,
+                                    "ActivationOutputActionItems": [
+                                        {
+                                            "$type": "ZMouseConfig.OutputActionItems.DpiConfigureOutputActionItem, ZMouseConfig",
+                                            "DataType": "trigger",
+                                            "DefaultLevelIndex": 0,
+                                            "IsValid": true,
+                                            "ItemType": "outputAction",
+                                            "Levels": [
+                                                {
+                                                    "XDpiRaw": 3200,
+                                                    "YDpiRaw": 3200,
+                                                    "isValid": true
+                                                }
+                                            ],
+                                            "SeparateXAndY": false,
+                                            "TypeId": "dpiConfigure"
+                                        },
+                                        {
+                                            "$type": "ZMouseConfig.OutputActionItems.ReportIntervalOutputActionItem, ZMouseConfig",
+                                            "DataType": "trigger",
+                                            "IsValid": true,
+                                            "ItemType": "outputAction",
+                                            "ReportInterval": "rI_1000_Hz",
+                                            "TypeId": "reportInterval"
+                                        },
+                                        {
+                                            "$type": "ZMouseConfig.OutputActionItems.LiftOffSelectOutputActionItem, ZMouseConfig",
+                                            "DataType": "trigger",
+                                            "IsValid": true,
+                                            "ItemType": "outputAction",
+                                            "Level": "two",
+                                            "TypeId": "liftOffSelect"
+                                        },
+                                        {
+                                            "$type": "ZMouseConfig.OutputActionItems.GameDeviceSelectOutputActionItem, ZMouseConfig",
+                                            "DataType": "trigger",
+                                            "GameDevice": "none",
+                                            "IsValid": true,
+                                            "ItemType": "outputAction",
+                                            "TypeId": "gameDeviceSelect"
+                                        },
+                                        {
+                                            "$type": "ZMouseConfig.OutputActionItems.LedSetOutputActionItem, ZMouseConfig",
+                                            "DataType": "trigger",
+                                            "IsValid": true,
+                                            "ItemType": "outputAction",
+                                            "LedConfigurationParameters": {
+                                                "Brightness": 100,
+                                                "Colour1": {
+                                                    "B": 254,
+                                                    "G": 0,
+                                                    "R": 255
+                                                },
+                                                "Colour2": {
+                                                    "B": 0,
+                                                    "G": 0,
+                                                    "R": 0
+                                                },
+                                                "Duration10ms": 500,
+                                                "Mode": "fixedColour"
+                                            },
+                                            "TypeId": "ledSet"
+                                        },
+                                        {
+                                            "$type": "ZMouseConfig.OutputActionItems.OledSetOutputActionItem, ZMouseConfig",
+                                            "DataType": "trigger",
+                                            "IsValid": true,
+                                            "ItemType": "outputAction",
+                                            "OledConfigurationParameters": {
+                                                "Message": "",
+                                                "Mode": "profile"
+                                            },
+                                            "TypeId": "oledSet"
+                                        },
+                                        {
+                                            "$type": "ZMouseConfig.OutputActionItems.AutoReleaseInputsOutputActionItem, ZMouseConfig",
+                                            "DataType": "trigger",
+                                            "IsValid": true,
+                                            "ItemType": "outputAction",
+                                            "State": "enabled",
+                                            "TypeId": "autoReleaseInputs"
+                                        },
+                                        {
+                                            "$type": "ZMouseConfig.OutputActionItems.TiltAutoZeroingOutputActionItem, ZMouseConfig",
+                                            "DataType": "trigger",
+                                            "IsValid": true,
+                                            "ItemType": "outputAction",
+                                            "State": "enabled",
+                                            "TypeId": "tiltAutoZeroing"
+                                        },
+                                        {
+                                            "$type": "ZMouseConfig.OutputActionItems.HapticFeedbackOutputActionItem, ZMouseConfig",
+                                            "DataType": "trigger",
+                                            "HapticFeedbackOption": "configured",
+                                            "IsValid": true,
+                                            "ItemType": "outputAction",
+                                            "StrengthPercentage": 33,
+                                            "Time10ms": 2,
+                                            "TypeId": "hapticFeedback"
+                                        }
+                                    ],
+                                    "DeactivationOutputActionItems": [
+                                        {
+                                            "$type": "ZMouseConfig.OutputActionItems.DoNothingOutputActionItem, ZMouseConfig",
+                                            "DataType": "trigger",
+                                            "IsSelected": false,
+                                            "IsValid": true,
+                                            "ItemType": "outputAction",
+                                            "TypeId": "doNothing"
+                                        }
+                                    ],
+                                    "Id": "1",
+                                    "InputActionType": {
+                                        "$type": "ZMouseConfig.InputActionTypes.SystemEventInputActionType, ZMouseConfig",
+                                        "Code": "profileChanged",
+                                        "DataType": "trigger",
+                                        "Id": "systemEvent",
+                                        "IsValid": true
+                                    },
+                                    "ItemType": "actionMapping",
+                                    "OutputActionSequenceDelay": 0,
+                                    "Predecessor": null,
+                                    "PredecessorId": 65535,
+                                    "ShouldBlockOnActivation": false,
+                                    "ShouldBlockOnDeactivation": false
+                                },
                                 {
                                     "ActionMappingIndexToBlockOnActivation": 65535,
                                     "ActionMappingIndexToBlockOnDeactivation": 65535,
@@ -4437,7 +5092,7 @@ json,2,4
                                         "ShouldBlockOnActivation": false,
                                         "ShouldBlockOnDeactivation": false
                                     },
-                                    "PredecessorId": 0,
+                                    "PredecessorId": 1,
                                     "ShouldBlockOnActivation": false,
                                     "ShouldBlockOnDeactivation": false
                                 },
@@ -4604,7 +5259,7 @@ json,2,4
                                         "ShouldBlockOnActivation": false,
                                         "ShouldBlockOnDeactivation": false
                                     },
-                                    "PredecessorId": 2,
+                                    "PredecessorId": 3,
                                     "ShouldBlockOnActivation": false,
                                     "ShouldBlockOnDeactivation": false
                                 },
@@ -4789,7 +5444,7 @@ json,2,4
                                         "ShouldBlockOnActivation": false,
                                         "ShouldBlockOnDeactivation": false
                                     },
-                                    "PredecessorId": 4,
+                                    "PredecessorId": 5,
                                     "ShouldBlockOnActivation": false,
                                     "ShouldBlockOnDeactivation": false
                                 },
@@ -4904,7 +5559,7 @@ json,2,4
                                         "ShouldBlockOnActivation": false,
                                         "ShouldBlockOnDeactivation": false
                                     },
-                                    "PredecessorId": 4,
+                                    "PredecessorId": 5,
                                     "ShouldBlockOnActivation": false,
                                     "ShouldBlockOnDeactivation": false
                                 },
@@ -5097,7 +5752,7 @@ json,2,4
                                         "ShouldBlockOnActivation": false,
                                         "ShouldBlockOnDeactivation": false
                                     },
-                                    "PredecessorId": 8,
+                                    "PredecessorId": 9,
                                     "ShouldBlockOnActivation": false,
                                     "ShouldBlockOnDeactivation": false
                                 },
@@ -5414,7 +6069,7 @@ json,2,4
                                         "ShouldBlockOnActivation": false,
                                         "ShouldBlockOnDeactivation": false
                                     },
-                                    "PredecessorId": 14,
+                                    "PredecessorId": 15,
                                     "ShouldBlockOnActivation": false,
                                     "ShouldBlockOnDeactivation": false
                                 },
@@ -5520,7 +6175,7 @@ json,2,4
                                         "ShouldBlockOnActivation": false,
                                         "ShouldBlockOnDeactivation": false
                                     },
-                                    "PredecessorId": 14,
+                                    "PredecessorId": 15,
                                     "ShouldBlockOnActivation": false,
                                     "ShouldBlockOnDeactivation": false
                                 },
@@ -5626,7 +6281,7 @@ json,2,4
                                         "ShouldBlockOnActivation": false,
                                         "ShouldBlockOnDeactivation": false
                                     },
-                                    "PredecessorId": 14,
+                                    "PredecessorId": 15,
                                     "ShouldBlockOnActivation": false,
                                     "ShouldBlockOnDeactivation": false
                                 },
@@ -5732,7 +6387,7 @@ json,2,4
                                         "ShouldBlockOnActivation": false,
                                         "ShouldBlockOnDeactivation": false
                                     },
-                                    "PredecessorId": 14,
+                                    "PredecessorId": 15,
                                     "ShouldBlockOnActivation": false,
                                     "ShouldBlockOnDeactivation": false
                                 }
@@ -5744,29 +6399,1035 @@ json,2,4
                         "CreationUser": null,
                         "Description": null,
                         "InfoProperties": "hasName",
-                        "ItemCount": 17,
+                        "ItemCount": 9,
                         "ItemType": "group",
                         "ModificationDate": "0001-01-01T00:00:00+00:00",
                         "ModificationUser": null,
                         "Name": "Alternate",
                         "ShortName": null
+                    },
+                    {
+                        "ActionMappings": {
+                            "$type": "ZMouseConfig.Items.UserConfigurationGroupItem+ActionMappingList, ZMouseConfig",
+                            "$values": [
+                                {
+                                    "ActionMappingIndexToBlockOnActivation": 65535,
+                                    "ActionMappingIndexToBlockOnDeactivation": 65535,
+                                    "ActivationOutputActionItems": [
+                                        {
+                                            "$type": "ZMouseConfig.OutputActionItems.DpiConfigureOutputActionItem, ZMouseConfig",
+                                            "DataType": "trigger",
+                                            "DefaultLevelIndex": 0,
+                                            "IsValid": true,
+                                            "ItemType": "outputAction",
+                                            "Levels": [
+                                                {
+                                                    "XDpiRaw": 3200,
+                                                    "YDpiRaw": 3200,
+                                                    "isValid": true
+                                                }
+                                            ],
+                                            "SeparateXAndY": false,
+                                            "TypeId": "dpiConfigure"
+                                        },
+                                        {
+                                            "$type": "ZMouseConfig.OutputActionItems.ReportIntervalOutputActionItem, ZMouseConfig",
+                                            "DataType": "trigger",
+                                            "IsValid": true,
+                                            "ItemType": "outputAction",
+                                            "ReportInterval": "rI_1000_Hz",
+                                            "TypeId": "reportInterval"
+                                        },
+                                        {
+                                            "$type": "ZMouseConfig.OutputActionItems.LiftOffSelectOutputActionItem, ZMouseConfig",
+                                            "DataType": "trigger",
+                                            "IsValid": true,
+                                            "ItemType": "outputAction",
+                                            "Level": "two",
+                                            "TypeId": "liftOffSelect"
+                                        },
+                                        {
+                                            "$type": "ZMouseConfig.OutputActionItems.GameDeviceSelectOutputActionItem, ZMouseConfig",
+                                            "DataType": "trigger",
+                                            "GameDevice": "joystick",
+                                            "IsValid": true,
+                                            "ItemType": "outputAction",
+                                            "TypeId": "gameDeviceSelect"
+                                        },
+                                        {
+                                            "$type": "ZMouseConfig.OutputActionItems.LedSetOutputActionItem, ZMouseConfig",
+                                            "DataType": "trigger",
+                                            "IsValid": true,
+                                            "ItemType": "outputAction",
+                                            "LedConfigurationParameters": {
+                                                "Brightness": 100,
+                                                "Colour1": {
+                                                    "B": 255,
+                                                    "G": 61,
+                                                    "R": 0
+                                                },
+                                                "Colour2": {
+                                                    "B": 0,
+                                                    "G": 0,
+                                                    "R": 0
+                                                },
+                                                "Duration10ms": 500,
+                                                "Mode": "fixedColour"
+                                            },
+                                            "TypeId": "ledSet"
+                                        },
+                                        {
+                                            "$type": "ZMouseConfig.OutputActionItems.OledSetOutputActionItem, ZMouseConfig",
+                                            "DataType": "trigger",
+                                            "IsValid": true,
+                                            "ItemType": "outputAction",
+                                            "OledConfigurationParameters": {
+                                                "Message": "",
+                                                "Mode": "profile"
+                                            },
+                                            "TypeId": "oledSet"
+                                        },
+                                        {
+                                            "$type": "ZMouseConfig.OutputActionItems.AutoReleaseInputsOutputActionItem, ZMouseConfig",
+                                            "DataType": "trigger",
+                                            "IsValid": true,
+                                            "ItemType": "outputAction",
+                                            "State": "enabled",
+                                            "TypeId": "autoReleaseInputs"
+                                        },
+                                        {
+                                            "$type": "ZMouseConfig.OutputActionItems.TiltAutoZeroingOutputActionItem, ZMouseConfig",
+                                            "DataType": "trigger",
+                                            "IsValid": true,
+                                            "ItemType": "outputAction",
+                                            "State": "enabled",
+                                            "TypeId": "tiltAutoZeroing"
+                                        },
+                                        {
+                                            "$type": "ZMouseConfig.OutputActionItems.DoNothingOutputActionItem, ZMouseConfig",
+                                            "DataType": "trigger",
+                                            "IsSelected": false,
+                                            "IsValid": true,
+                                            "ItemType": "outputAction",
+                                            "TypeId": "doNothing"
+                                        }
+                                    ],
+                                    "DeactivationOutputActionItems": [
+                                        {
+                                            "$type": "ZMouseConfig.OutputActionItems.DoNothingOutputActionItem, ZMouseConfig",
+                                            "DataType": "trigger",
+                                            "IsSelected": false,
+                                            "IsValid": true,
+                                            "ItemType": "outputAction",
+                                            "TypeId": "doNothing"
+                                        }
+                                    ],
+                                    "Id": "1",
+                                    "InputActionType": {
+                                        "$type": "ZMouseConfig.InputActionTypes.SystemEventInputActionType, ZMouseConfig",
+                                        "Code": "profileChanged",
+                                        "DataType": "trigger",
+                                        "Id": "systemEvent",
+                                        "IsValid": true
+                                    },
+                                    "ItemType": "actionMapping",
+                                    "OutputActionSequenceDelay": 0,
+                                    "Predecessor": null,
+                                    "PredecessorId": 65535,
+                                    "ShouldBlockOnActivation": false,
+                                    "ShouldBlockOnDeactivation": false
+                                },
+                                {
+                                    "ActionMappingIndexToBlockOnActivation": 65535,
+                                    "ActionMappingIndexToBlockOnDeactivation": 65535,
+                                    "ActivationOutputActionItems": [
+                                        {
+                                            "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                            "ButtonState": "downOn",
+                                            "DataType": "trigger",
+                                            "IsValid": true,
+                                            "ItemType": "outputAction",
+                                            "KeyCode": {
+                                                "HidPageValue": 224
+                                            },
+                                            "TypeId": "keyboardKey"
+                                        },
+                                        {
+                                            "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                            "ButtonState": "tap",
+                                            "DataType": "trigger",
+                                            "IsValid": true,
+                                            "ItemType": "outputAction",
+                                            "KeyCode": {
+                                                "HidPageValue": 13
+                                            },
+                                            "TypeId": "keyboardKey"
+                                        },
+                                        {
+                                            "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                            "ButtonState": "upOff",
+                                            "DataType": "trigger",
+                                            "IsValid": true,
+                                            "ItemType": "outputAction",
+                                            "KeyCode": {
+                                                "HidPageValue": 224
+                                            },
+                                            "TypeId": "keyboardKey"
+                                        }
+                                    ],
+                                    "ActivationOutputName": "Toggle Bottom Bar",
+                                    "DeactivationOutputActionItems": [
+                                    ],
+                                    "Id": "1",
+                                    "InputActionType": {
+                                        "$type": "ZMouseConfig.InputActionTypes.ButtonToggleInputActionType, ZMouseConfig",
+                                        "ActiveState": "activeWhenOn",
+                                        "Button": {
+                                            "Id": "thumbBottom",
+                                            "IsValid": true,
+                                            "KeyName": "MouseButtonThumbBottom"
+                                        },
+                                        "DataType": "trigger",
+                                        "Id": "buttonToggle",
+                                        "IsValid": true
+                                    },
+                                    "ItemType": "actionMapping",
+                                    "OutputActionSequenceDelay": 0,
+                                    "Predecessor": null,
+                                    "PredecessorId": 65535,
+                                    "ShouldBlockOnActivation": false,
+                                    "ShouldBlockOnDeactivation": false
+                                },
+                                {
+                                    "ActionMappingIndexToBlockOnActivation": 65535,
+                                    "ActionMappingIndexToBlockOnDeactivation": 65535,
+                                    "ActivationOutputActionItems": [
+                                        {
+                                            "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                            "ButtonState": "downOn",
+                                            "DataType": "trigger",
+                                            "IsValid": true,
+                                            "ItemType": "outputAction",
+                                            "KeyCode": {
+                                                "HidPageValue": 224
+                                            },
+                                            "TypeId": "keyboardKey"
+                                        },
+                                        {
+                                            "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                            "ButtonState": "tap",
+                                            "DataType": "trigger",
+                                            "IsValid": true,
+                                            "ItemType": "outputAction",
+                                            "KeyCode": {
+                                                "HidPageValue": 14
+                                            },
+                                            "TypeId": "keyboardKey"
+                                        },
+                                        {
+                                            "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                            "ButtonState": "upOff",
+                                            "DataType": "trigger",
+                                            "IsValid": true,
+                                            "ItemType": "outputAction",
+                                            "KeyCode": {
+                                                "HidPageValue": 224
+                                            },
+                                            "TypeId": "keyboardKey"
+                                        },
+                                        {
+                                            "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                            "ButtonState": "downOn",
+                                            "DataType": "trigger",
+                                            "IsValid": true,
+                                            "ItemType": "outputAction",
+                                            "KeyCode": {
+                                                "HidPageValue": 224
+                                            },
+                                            "TypeId": "keyboardKey"
+                                        },
+                                        {
+                                            "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                            "ButtonState": "tap",
+                                            "DataType": "trigger",
+                                            "IsValid": true,
+                                            "ItemType": "outputAction",
+                                            "KeyCode": {
+                                                "HidPageValue": 16
+                                            },
+                                            "TypeId": "keyboardKey"
+                                        },
+                                        {
+                                            "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                            "ButtonState": "upOff",
+                                            "DataType": "trigger",
+                                            "IsValid": true,
+                                            "ItemType": "outputAction",
+                                            "KeyCode": {
+                                                "HidPageValue": 224
+                                            },
+                                            "TypeId": "keyboardKey"
+                                        }
+                                    ],
+                                    "ActivationOutputName": "",
+                                    "DeactivationOutputActionItems": [
+                                    ],
+                                    "Id": "1",
+                                    "InputActionType": {
+                                        "$type": "ZMouseConfig.InputActionTypes.ButtonToggleInputActionType, ZMouseConfig",
+                                        "ActiveState": "activeWhenOn",
+                                        "Button": {
+                                            "Id": "edgeRear",
+                                            "IsValid": true,
+                                            "KeyName": "MouseButtonEdgeRear"
+                                        },
+                                        "DataType": "trigger",
+                                        "Id": "buttonToggle",
+                                        "IsValid": true
+                                    },
+                                    "ItemType": "actionMapping",
+                                    "OutputActionSequenceDelay": 0,
+                                    "Predecessor": null,
+                                    "PredecessorId": 65535,
+                                    "ShouldBlockOnActivation": false,
+                                    "ShouldBlockOnDeactivation": false
+                                },
+                                {
+                                    "ActionMappingIndexToBlockOnActivation": 65535,
+                                    "ActionMappingIndexToBlockOnDeactivation": 65535,
+                                    "ActivationOutputActionItems": [
+                                        {
+                                            "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                            "ButtonState": "downOn",
+                                            "DataType": "trigger",
+                                            "IsValid": true,
+                                            "ItemType": "outputAction",
+                                            "KeyCode": {
+                                                "HidPageValue": 224
+                                            },
+                                            "TypeId": "keyboardKey"
+                                        },
+                                        {
+                                            "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                            "ButtonState": "downOn",
+                                            "DataType": "trigger",
+                                            "IsValid": true,
+                                            "ItemType": "outputAction",
+                                            "KeyCode": {
+                                                "HidPageValue": 225
+                                            },
+                                            "TypeId": "keyboardKey"
+                                        },
+                                        {
+                                            "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                            "ButtonState": "downOn",
+                                            "DataType": "trigger",
+                                            "IsValid": true,
+                                            "ItemType": "outputAction",
+                                            "KeyCode": {
+                                                "HidPageValue": 226
+                                            },
+                                            "TypeId": "keyboardKey"
+                                        },
+                                        {
+                                            "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                            "ButtonState": "tap",
+                                            "DataType": "trigger",
+                                            "IsValid": true,
+                                            "ItemType": "outputAction",
+                                            "KeyCode": {
+                                                "HidPageValue": 9
+                                            },
+                                            "TypeId": "keyboardKey"
+                                        },
+                                        {
+                                            "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                            "ButtonState": "upOff",
+                                            "DataType": "trigger",
+                                            "IsValid": true,
+                                            "ItemType": "outputAction",
+                                            "KeyCode": {
+                                                "HidPageValue": 226
+                                            },
+                                            "TypeId": "keyboardKey"
+                                        },
+                                        {
+                                            "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                            "ButtonState": "upOff",
+                                            "DataType": "trigger",
+                                            "IsValid": true,
+                                            "ItemType": "outputAction",
+                                            "KeyCode": {
+                                                "HidPageValue": 224
+                                            },
+                                            "TypeId": "keyboardKey"
+                                        },
+                                        {
+                                            "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                            "ButtonState": "upOff",
+                                            "DataType": "trigger",
+                                            "IsValid": true,
+                                            "ItemType": "outputAction",
+                                            "KeyCode": {
+                                                "HidPageValue": 225
+                                            },
+                                            "TypeId": "keyboardKey"
+                                        }
+                                    ],
+                                    "ActivationOutputName": "View: Toggle Editor Group Sizes",
+                                    "DeactivationOutputActionItems": [
+                                    ],
+                                    "Id": "1",
+                                    "InputActionType": {
+                                        "$type": "ZMouseConfig.InputActionTypes.ButtonToggleInputActionType, ZMouseConfig",
+                                        "ActiveState": "activeWhenOn",
+                                        "Button": {
+                                            "Id": "thumbTop",
+                                            "IsValid": true,
+                                            "KeyName": "MouseButtonThumbTop"
+                                        },
+                                        "DataType": "trigger",
+                                        "Id": "buttonToggle",
+                                        "IsValid": true
+                                    },
+                                    "ItemType": "actionMapping",
+                                    "OutputActionSequenceDelay": 0,
+                                    "Predecessor": null,
+                                    "PredecessorId": 65535,
+                                    "ShouldBlockOnActivation": false,
+                                    "ShouldBlockOnDeactivation": false
+                                }
+                            ]
+                        },
+                        "Applications": [
+                            {
+                                "Name": "Code.exe",
+                                "Path": "Code.exe"
+                            }
+                        ],
+                        "CreationDate": "0001-01-01T00:00:00+00:00",
+                        "CreationUser": null,
+                        "Description": null,
+                        "InfoProperties": "hasName",
+                        "ItemCount": 9,
+                        "ItemType": "group",
+                        "ModificationDate": "0001-01-01T00:00:00+00:00",
+                        "ModificationUser": null,
+                        "Name": "VSCode",
+                        "ShortName": null
                     }
                 ],
                 "InfoProperties": "hasName",
-                "ItemCount": 17,
+                "ItemCount": 9,
                 "ItemType": "group",
                 "ModificationDate": "0001-01-01T00:00:00+00:00",
                 "ModificationUser": null,
                 "Name": "Desktop",
                 "ShortName": null
+            },
+            {
+                "ActionMappings": {
+                    "$type": "ZMouseConfig.Items.UserConfigurationGroupItem+ActionMappingList, ZMouseConfig",
+                    "$values": [
+                        {
+                            "ActionMappingIndexToBlockOnActivation": 65535,
+                            "ActionMappingIndexToBlockOnDeactivation": 65535,
+                            "ActivationOutputActionItems": [
+                                {
+                                    "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                    "ButtonState": "downOn",
+                                    "DataType": "trigger",
+                                    "IsValid": true,
+                                    "ItemType": "outputAction",
+                                    "KeyCode": {
+                                        "HidPageValue": 225
+                                    },
+                                    "TypeId": "keyboardKey"
+                                },
+                                {
+                                    "$type": "ZMouseConfig.OutputActionItems.MouseButtonOutputActionItem, ZMouseConfig",
+                                    "ButtonId": 2,
+                                    "ButtonState": "downOn",
+                                    "DataType": "trigger",
+                                    "IsValid": true,
+                                    "ItemType": "outputAction",
+                                    "TypeId": "mouseButton"
+                                },
+                                {
+                                    "$type": "ZMouseConfig.OutputActionItems.MousePointerOutputActionItem, ZMouseConfig",
+                                    "DataType": "trigger",
+                                    "IsValid": true,
+                                    "ItemType": "outputAction",
+                                    "TypeId": "mousePointer",
+                                    "xCount": 1,
+                                    "yCount": 0
+                                },
+                                {
+                                    "$type": "ZMouseConfig.OutputActionItems.MousePointerOutputActionItem, ZMouseConfig",
+                                    "DataType": "trigger",
+                                    "IsValid": true,
+                                    "ItemType": "outputAction",
+                                    "TypeId": "mousePointer",
+                                    "xCount": 1,
+                                    "yCount": 0
+                                }
+                            ],
+                            "ActivationOutputName": "",
+                            "DeactivationOutputActionItems": [
+                                {
+                                    "$type": "ZMouseConfig.OutputActionItems.MouseButtonOutputActionItem, ZMouseConfig",
+                                    "ButtonId": 2,
+                                    "ButtonState": "upOff",
+                                    "DataType": "trigger",
+                                    "IsValid": true,
+                                    "ItemType": "outputAction",
+                                    "TypeId": "mouseButton"
+                                },
+                                {
+                                    "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                    "ButtonState": "upOff",
+                                    "DataType": "trigger",
+                                    "IsValid": true,
+                                    "ItemType": "outputAction",
+                                    "KeyCode": {
+                                        "HidPageValue": 225
+                                    },
+                                    "TypeId": "keyboardKey"
+                                }
+                            ],
+                            "Id": "1",
+                            "InputActionType": {
+                                "$type": "ZMouseConfig.InputActionTypes.ImuAngleRegionToggleInputActionType, ZMouseConfig",
+                                "ActiveState": "activeWhenOn",
+                                "Axis": "roll",
+                                "DataType": "trigger",
+                                "Direction": "both",
+                                "Id": "imuAngleRegionToggle",
+                                "IsValid": true,
+                                "Region": {
+                                    "EntryEndDegreeTenths": 1788,
+                                    "EntryStartDegreeTenths": 0,
+                                    "ExitEndDegreeTenths": 1793,
+                                    "ExitStartDegreeTenths": 0,
+                                    "IsValid": true
+                                }
+                            },
+                            "ItemType": "actionMapping",
+                            "OutputActionSequenceDelay": 0,
+                            "Predecessor": null,
+                            "PredecessorId": 65535,
+                            "ShouldBlockOnActivation": false,
+                            "ShouldBlockOnDeactivation": false
+                        },
+                        {
+                            "ActionMappingIndexToBlockOnActivation": 65535,
+                            "ActionMappingIndexToBlockOnDeactivation": 65535,
+                            "ActivationOutputActionItems": [
+                            ],
+                            "ActivationOutputName": "",
+                            "DeactivationOutputActionItems": [
+                            ],
+                            "Id": "1",
+                            "InputActionType": {
+                                "$type": "ZMouseConfig.InputActionTypes.ImuAngleRegionToggleInputActionType, ZMouseConfig",
+                                "ActiveState": "activeWhenOn",
+                                "Axis": "roll",
+                                "DataType": "trigger",
+                                "Direction": "both",
+                                "Id": "imuAngleRegionToggle",
+                                "IsValid": true,
+                                "Region": {
+                                    "EntryEndDegreeTenths": 1700,
+                                    "EntryStartDegreeTenths": 0,
+                                    "ExitEndDegreeTenths": 1710,
+                                    "ExitStartDegreeTenths": 0,
+                                    "IsValid": true
+                                }
+                            },
+                            "ItemType": "actionMapping",
+                            "OutputActionSequenceDelay": 0,
+                            "Predecessor": null,
+                            "PredecessorId": 65535,
+                            "ShouldBlockOnActivation": false,
+                            "ShouldBlockOnDeactivation": false
+                        },
+                        {
+                            "ActionMappingIndexToBlockOnActivation": 65535,
+                            "ActionMappingIndexToBlockOnDeactivation": 65535,
+                            "ActivationOutputActionItems": [
+                                {
+                                    "$type": "ZMouseConfig.OutputActionItems.MouseButtonOutputActionItem, ZMouseConfig",
+                                    "ButtonId": 2,
+                                    "ButtonState": "downOn",
+                                    "DataType": "trigger",
+                                    "IsValid": true,
+                                    "ItemType": "outputAction",
+                                    "TypeId": "mouseButton"
+                                }
+                            ],
+                            "ActivationOutputName": "",
+                            "DeactivationOutputActionItems": [
+                                {
+                                    "$type": "ZMouseConfig.OutputActionItems.MouseButtonOutputActionItem, ZMouseConfig",
+                                    "ButtonId": 2,
+                                    "ButtonState": "upOff",
+                                    "DataType": "trigger",
+                                    "IsValid": true,
+                                    "ItemType": "outputAction",
+                                    "TypeId": "mouseButton"
+                                }
+                            ],
+                            "Id": "1",
+                            "InputActionType": {
+                                "$type": "ZMouseConfig.InputActionTypes.ImuAngleRegionToggleInputActionType, ZMouseConfig",
+                                "ActiveState": "activeWhenOn",
+                                "Axis": "roll",
+                                "DataType": "trigger",
+                                "Direction": "both",
+                                "Id": "imuAngleRegionToggle",
+                                "IsValid": true,
+                                "Region": {
+                                    "EntryEndDegreeTenths": 3600,
+                                    "EntryStartDegreeTenths": 1812,
+                                    "ExitEndDegreeTenths": 3600,
+                                    "ExitStartDegreeTenths": 1807,
+                                    "IsValid": true
+                                }
+                            },
+                            "ItemType": "actionMapping",
+                            "OutputActionSequenceDelay": 0,
+                            "Predecessor": null,
+                            "PredecessorId": 65535,
+                            "ShouldBlockOnActivation": false,
+                            "ShouldBlockOnDeactivation": false
+                        },
+                        {
+                            "ActionMappingIndexToBlockOnActivation": 65535,
+                            "ActionMappingIndexToBlockOnDeactivation": 65535,
+                            "ActivationOutputActionItems": [
+                            ],
+                            "ActivationOutputName": "",
+                            "DeactivationOutputActionItems": [
+                            ],
+                            "Id": "1",
+                            "InputActionType": {
+                                "$type": "ZMouseConfig.InputActionTypes.ImuAngleRegionToggleInputActionType, ZMouseConfig",
+                                "ActiveState": "activeWhenOn",
+                                "Axis": "roll",
+                                "DataType": "trigger",
+                                "Direction": "both",
+                                "Id": "imuAngleRegionToggle",
+                                "IsValid": true,
+                                "Region": {
+                                    "EntryEndDegreeTenths": 3600,
+                                    "EntryStartDegreeTenths": 1900,
+                                    "ExitEndDegreeTenths": 3600,
+                                    "ExitStartDegreeTenths": 1890,
+                                    "IsValid": true
+                                }
+                            },
+                            "ItemType": "actionMapping",
+                            "OutputActionSequenceDelay": 0,
+                            "Predecessor": null,
+                            "PredecessorId": 65535,
+                            "ShouldBlockOnActivation": false,
+                            "ShouldBlockOnDeactivation": false
+                        },
+                        {
+                            "ActionMappingIndexToBlockOnActivation": 65535,
+                            "ActionMappingIndexToBlockOnDeactivation": 65535,
+                            "ActivationOutputActionItems": [
+                            ],
+                            "ActivationOutputName": "",
+                            "DeactivationOutputActionItems": [
+                            ],
+                            "Id": "1",
+                            "InputActionType": {
+                                "$type": "ZMouseConfig.InputActionTypes.ImuAngleRangeInputActionType, ZMouseConfig",
+                                "Axis": "roll",
+                                "DataType": "oneRangeAndRangeInstance",
+                                "Id": "imuAngleRange",
+                                "IsValid": true,
+                                "LeftRange": {
+                                    "EndDegreeTenths": 1800,
+                                    "IsValid": true,
+                                    "StartDegreeTenths": 1720
+                                },
+                                "Mirrored": true,
+                                "RightRange": {
+                                    "EndDegreeTenths": 1880,
+                                    "IsValid": true,
+                                    "StartDegreeTenths": 1800
+                                }
+                            },
+                            "ItemType": "actionMapping",
+                            "OutputActionSequenceDelay": 0,
+                            "Predecessor": null,
+                            "PredecessorId": 65535,
+                            "ShouldBlockOnActivation": false,
+                            "ShouldBlockOnDeactivation": false
+                        },
+                        {
+                            "ActionMappingIndexToBlockOnActivation": 65535,
+                            "ActionMappingIndexToBlockOnDeactivation": 65535,
+                            "ActivationOutputActionItems": [
+                                {
+                                    "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                    "ButtonState": "downOn",
+                                    "DataType": "trigger",
+                                    "IsValid": true,
+                                    "ItemType": "outputAction",
+                                    "KeyCode": {
+                                        "HidPageValue": 224
+                                    },
+                                    "TypeId": "keyboardKey"
+                                },
+                                {
+                                    "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                    "ButtonState": "tap",
+                                    "DataType": "trigger",
+                                    "IsValid": true,
+                                    "ItemType": "outputAction",
+                                    "KeyCode": {
+                                        "HidPageValue": 29
+                                    },
+                                    "TypeId": "keyboardKey"
+                                },
+                                {
+                                    "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                    "ButtonState": "upOff",
+                                    "DataType": "trigger",
+                                    "IsValid": true,
+                                    "ItemType": "outputAction",
+                                    "KeyCode": {
+                                        "HidPageValue": 224
+                                    },
+                                    "TypeId": "keyboardKey"
+                                }
+                            ],
+                            "ActivationOutputName": "Undo",
+                            "DeactivationOutputActionItems": [
+                            ],
+                            "Id": "1",
+                            "InputActionType": {
+                                "$type": "ZMouseConfig.InputActionTypes.ButtonToggleInputActionType, ZMouseConfig",
+                                "ActiveState": "activeWhenOn",
+                                "Button": {
+                                    "Id": "fingertipLeft",
+                                    "IsValid": true,
+                                    "KeyName": "MouseButtonFingertipLeft"
+                                },
+                                "DataType": "trigger",
+                                "Id": "buttonToggle",
+                                "IsValid": true
+                            },
+                            "ItemType": "actionMapping",
+                            "OutputActionSequenceDelay": 0,
+                            "Predecessor": null,
+                            "PredecessorId": 65535,
+                            "ShouldBlockOnActivation": false,
+                            "ShouldBlockOnDeactivation": false
+                        },
+                        {
+                            "ActionMappingIndexToBlockOnActivation": 65535,
+                            "ActionMappingIndexToBlockOnDeactivation": 65535,
+                            "ActivationOutputActionItems": [
+                                {
+                                    "$type": "ZMouseConfig.OutputActionItems.HapticFeedbackOutputActionItem, ZMouseConfig",
+                                    "DataType": "trigger",
+                                    "HapticFeedbackOption": "configured",
+                                    "IsValid": true,
+                                    "ItemType": "outputAction",
+                                    "StrengthPercentage": 0,
+                                    "Time10ms": 7,
+                                    "TypeId": "hapticFeedback"
+                                }
+                            ],
+                            "ActivationOutputName": "",
+                            "DeactivationOutputActionItems": [
+                            ],
+                            "Id": "1",
+                            "InputActionType": {
+                                "$type": "ZMouseConfig.InputActionTypes.ForceRegionToggleInputActionType, ZMouseConfig",
+                                "ActiveState": "activeWhenOn",
+                                "Button": {
+                                    "Id": "fingertipLeft",
+                                    "IsValid": true,
+                                    "KeyName": "MouseButtonFingertipLeft"
+                                },
+                                "DataType": "trigger",
+                                "Direction": "increasing",
+                                "Id": "forceRegionToggle",
+                                "IsValid": true,
+                                "Region": {
+                                    "EntryEndPercentageTenths": 1000,
+                                    "EntryStartPercentageTenths": 500,
+                                    "ExitEndPercentageTenths": 1000,
+                                    "ExitStartPercentageTenths": 400,
+                                    "IsValid": true
+                                }
+                            },
+                            "ItemType": "actionMapping",
+                            "OutputActionSequenceDelay": 0,
+                            "Predecessor": {
+                                "ActionMappingIndexToBlockOnActivation": 65535,
+                                "ActionMappingIndexToBlockOnDeactivation": 65535,
+                                "ActivationOutputActionItems": [
+                                    {
+                                        "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                        "ButtonState": "downOn",
+                                        "DataType": "trigger",
+                                        "IsValid": true,
+                                        "ItemType": "outputAction",
+                                        "KeyCode": {
+                                            "HidPageValue": 224
+                                        },
+                                        "TypeId": "keyboardKey"
+                                    },
+                                    {
+                                        "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                        "ButtonState": "tap",
+                                        "DataType": "trigger",
+                                        "IsValid": true,
+                                        "ItemType": "outputAction",
+                                        "KeyCode": {
+                                            "HidPageValue": 29
+                                        },
+                                        "TypeId": "keyboardKey"
+                                    },
+                                    {
+                                        "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                        "ButtonState": "upOff",
+                                        "DataType": "trigger",
+                                        "IsValid": true,
+                                        "ItemType": "outputAction",
+                                        "KeyCode": {
+                                            "HidPageValue": 224
+                                        },
+                                        "TypeId": "keyboardKey"
+                                    }
+                                ],
+                                "ActivationOutputName": "Undo",
+                                "DeactivationOutputActionItems": [
+                                ],
+                                "Id": "1",
+                                "InputActionType": {
+                                    "$type": "ZMouseConfig.InputActionTypes.ButtonToggleInputActionType, ZMouseConfig",
+                                    "ActiveState": "activeWhenOn",
+                                    "Button": {
+                                        "Id": "fingertipLeft",
+                                        "IsValid": true,
+                                        "KeyName": "MouseButtonFingertipLeft"
+                                    },
+                                    "DataType": "trigger",
+                                    "Id": "buttonToggle",
+                                    "IsValid": true
+                                },
+                                "ItemType": "actionMapping",
+                                "OutputActionSequenceDelay": 0,
+                                "Predecessor": null,
+                                "PredecessorId": 65535,
+                                "ShouldBlockOnActivation": false,
+                                "ShouldBlockOnDeactivation": false
+                            },
+                            "PredecessorId": 5,
+                            "ShouldBlockOnActivation": false,
+                            "ShouldBlockOnDeactivation": false
+                        },
+                        {
+                            "ActionMappingIndexToBlockOnActivation": 65535,
+                            "ActionMappingIndexToBlockOnDeactivation": 65535,
+                            "ActivationOutputActionItems": [
+                                {
+                                    "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                    "ButtonState": "downOn",
+                                    "DataType": "trigger",
+                                    "IsValid": true,
+                                    "ItemType": "outputAction",
+                                    "KeyCode": {
+                                        "HidPageValue": 224
+                                    },
+                                    "TypeId": "keyboardKey"
+                                },
+                                {
+                                    "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                    "ButtonState": "tap",
+                                    "DataType": "trigger",
+                                    "IsValid": true,
+                                    "ItemType": "outputAction",
+                                    "KeyCode": {
+                                        "HidPageValue": 28
+                                    },
+                                    "TypeId": "keyboardKey"
+                                },
+                                {
+                                    "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                    "ButtonState": "upOff",
+                                    "DataType": "trigger",
+                                    "IsValid": true,
+                                    "ItemType": "outputAction",
+                                    "KeyCode": {
+                                        "HidPageValue": 224
+                                    },
+                                    "TypeId": "keyboardKey"
+                                }
+                            ],
+                            "ActivationOutputName": "Redo",
+                            "DeactivationOutputActionItems": [
+                            ],
+                            "Id": "1",
+                            "InputActionType": {
+                                "$type": "ZMouseConfig.InputActionTypes.ButtonToggleInputActionType, ZMouseConfig",
+                                "ActiveState": "activeWhenOn",
+                                "Button": {
+                                    "Id": "fingertipRight",
+                                    "IsValid": true,
+                                    "KeyName": "MouseButtonFingertipRight"
+                                },
+                                "DataType": "trigger",
+                                "Id": "buttonToggle",
+                                "IsValid": true
+                            },
+                            "ItemType": "actionMapping",
+                            "OutputActionSequenceDelay": 0,
+                            "Predecessor": null,
+                            "PredecessorId": 65535,
+                            "ShouldBlockOnActivation": false,
+                            "ShouldBlockOnDeactivation": false
+                        },
+                        {
+                            "ActionMappingIndexToBlockOnActivation": 65535,
+                            "ActionMappingIndexToBlockOnDeactivation": 65535,
+                            "ActivationOutputActionItems": [
+                                {
+                                    "$type": "ZMouseConfig.OutputActionItems.HapticFeedbackOutputActionItem, ZMouseConfig",
+                                    "DataType": "trigger",
+                                    "HapticFeedbackOption": "configured",
+                                    "IsValid": true,
+                                    "ItemType": "outputAction",
+                                    "StrengthPercentage": 0,
+                                    "Time10ms": 7,
+                                    "TypeId": "hapticFeedback"
+                                }
+                            ],
+                            "ActivationOutputName": "",
+                            "DeactivationOutputActionItems": [
+                            ],
+                            "Id": "1",
+                            "InputActionType": {
+                                "$type": "ZMouseConfig.InputActionTypes.ForceRegionToggleInputActionType, ZMouseConfig",
+                                "ActiveState": "activeWhenOn",
+                                "Button": {
+                                    "Id": "fingertipRight",
+                                    "IsValid": true,
+                                    "KeyName": "MouseButtonFingertipRight"
+                                },
+                                "DataType": "trigger",
+                                "Direction": "increasing",
+                                "Id": "forceRegionToggle",
+                                "IsValid": true,
+                                "Region": {
+                                    "EntryEndPercentageTenths": 1000,
+                                    "EntryStartPercentageTenths": 500,
+                                    "ExitEndPercentageTenths": 1000,
+                                    "ExitStartPercentageTenths": 400,
+                                    "IsValid": true
+                                }
+                            },
+                            "ItemType": "actionMapping",
+                            "OutputActionSequenceDelay": 0,
+                            "Predecessor": {
+                                "ActionMappingIndexToBlockOnActivation": 65535,
+                                "ActionMappingIndexToBlockOnDeactivation": 65535,
+                                "ActivationOutputActionItems": [
+                                    {
+                                        "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                        "ButtonState": "downOn",
+                                        "DataType": "trigger",
+                                        "IsValid": true,
+                                        "ItemType": "outputAction",
+                                        "KeyCode": {
+                                            "HidPageValue": 224
+                                        },
+                                        "TypeId": "keyboardKey"
+                                    },
+                                    {
+                                        "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                        "ButtonState": "tap",
+                                        "DataType": "trigger",
+                                        "IsValid": true,
+                                        "ItemType": "outputAction",
+                                        "KeyCode": {
+                                            "HidPageValue": 28
+                                        },
+                                        "TypeId": "keyboardKey"
+                                    },
+                                    {
+                                        "$type": "ZMouseConfig.OutputActionItems.KeyboardKeyOutputActionItem, ZMouseConfig",
+                                        "ButtonState": "upOff",
+                                        "DataType": "trigger",
+                                        "IsValid": true,
+                                        "ItemType": "outputAction",
+                                        "KeyCode": {
+                                            "HidPageValue": 224
+                                        },
+                                        "TypeId": "keyboardKey"
+                                    }
+                                ],
+                                "ActivationOutputName": "Redo",
+                                "DeactivationOutputActionItems": [
+                                ],
+                                "Id": "1",
+                                "InputActionType": {
+                                    "$type": "ZMouseConfig.InputActionTypes.ButtonToggleInputActionType, ZMouseConfig",
+                                    "ActiveState": "activeWhenOn",
+                                    "Button": {
+                                        "Id": "fingertipRight",
+                                        "IsValid": true,
+                                        "KeyName": "MouseButtonFingertipRight"
+                                    },
+                                    "DataType": "trigger",
+                                    "Id": "buttonToggle",
+                                    "IsValid": true
+                                },
+                                "ItemType": "actionMapping",
+                                "OutputActionSequenceDelay": 0,
+                                "Predecessor": null,
+                                "PredecessorId": 65535,
+                                "ShouldBlockOnActivation": false,
+                                "ShouldBlockOnDeactivation": false
+                            },
+                            "PredecessorId": 7,
+                            "ShouldBlockOnActivation": false,
+                            "ShouldBlockOnDeactivation": false
+                        }
+                    ]
+                },
+                "Applications": [
+                    {
+                        "Name": "Fusion360.exe",
+                        "Path": "Fusion360.exe"
+                    }
+                ],
+                "CreationDate": "0001-01-01T00:00:00+00:00",
+                "CreationUser": null,
+                "Description": null,
+                "InfoProperties": "hasName",
+                "ItemCount": 9,
+                "ItemType": "group",
+                "ModificationDate": "0001-01-01T00:00:00+00:00",
+                "ModificationUser": null,
+                "Name": "Fusion 360",
+                "ShortName": null
             }
         ],
         "InfoProperties": "hasName",
-        "ItemCount": 17,
+        "ItemCount": 9,
         "ItemType": "group",
         "ModificationDate": "0001-01-01T00:00:00+00:00",
         "ModificationUser": null,
         "Name": "Global",
         "ShortName": null
-    }
+    },
+    "Version": 2
 }
